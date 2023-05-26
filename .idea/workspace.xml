@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create connection.php">
+      <change afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/log_in.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login_action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/welcome.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test_sb" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="login" />
+                    <option name="lastUsedInstant" value="1685121485" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="test_sb" />
+                    <option name="lastUsedInstant" value="1685121377" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="tomasz" />
+                    <option name="lastUsedInstant" value="1684827475" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1684827474" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="2QBWSgsfoGgcLzJY2k7Q1szh3j8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="" />
+      <created>1684827456306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684827456306</updated>
+      <workItem from="1684827457936" duration="1565000" />
+      <workItem from="1684843223938" duration="842000" />
+      <workItem from="1685115434028" duration="1094000" />
+      <workItem from="1685121362665" duration="91000" />
+      <workItem from="1685121467469" duration="2284000" />
+    </task>
+    <task id="LOCAL-00001" summary="Create connection.php">
+      <created>1684827546673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827546673</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create connection.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create connection.php" />
+  </component>
+</project>

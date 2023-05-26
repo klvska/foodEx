@@ -2,10 +2,13 @@
 
 session_start();
 
-if (!isset($_SESSION['udanarejestracja'])) {
+if (!isset($_SESSION['udanarejestracja']))
+{
     header('Location: login.php');
     exit();
-} else {
+}
+else
+{
     unset($_SESSION['udanarejestracja']);
 }
 
@@ -25,18 +28,18 @@ if (isset($_SESSION['e_bot'])) unset($_SESSION['e_bot']);
 
 <!DOCTYPE HTML>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>FoodEx</title>
+    <title>Jedzenie</title>
 </head>
 
 <body>
 
-    <a href="login.php">Zaloguj się na swoje konto!</a>
-    <br><br>
+Dziękujemy za rejestrację w sklepie! Możesz już zalogować się na swoje konto!<br /><br />
+
+<a href="./login.php">Zaloguj się na swoje konto!</a>
+<br /><br />
 
 </body>
-
 </html>
