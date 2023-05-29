@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create connection.php">
-      <change afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/log_in.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login_action.php" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create connection.php and dashboard.php. Refactor logowanie.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logowanie/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/login_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login_action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logowanie/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/welcome.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +97,8 @@
       <workItem from="1684843223938" duration="842000" />
       <workItem from="1685115434028" duration="1094000" />
       <workItem from="1685121362665" duration="91000" />
-      <workItem from="1685121467469" duration="2284000" />
+      <workItem from="1685121467469" duration="3563000" />
+      <workItem from="1685363430161" duration="3896000" />
     </task>
     <task id="LOCAL-00001" summary="Create connection.php">
       <created>1684827546673</created>
@@ -106,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684827546673</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create connection.php and dashboard.php. Refactor logowanie.">
+      <created>1685123839932</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685123839932</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create connection.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create connection.php" />
+    <MESSAGE value="Create connection.php and dashboard.php. Refactor logowanie." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create connection.php and dashboard.php. Refactor logowanie." />
   </component>
 </project>

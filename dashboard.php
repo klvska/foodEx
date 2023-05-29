@@ -24,7 +24,8 @@ if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
     $result = mysqli_query($connection, $sql);
     while($row = mysqli_fetch_assoc($result))
     {
-        echo "Witaj ".$row['user']."!";
+        echo "Witaj ".$row['Nazwa_Uzytkownika']."!";
+
 
     }
 ?>

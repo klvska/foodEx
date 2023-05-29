@@ -19,25 +19,25 @@ try
     }
     else
     {
-        $login = $_POST['login'];
+        $email = $_POST['login'];
         $haslo = $_POST['haslo'];
 
-        $login = htmlentities($login, ENT_QUOTES, "UTF-8");
+        $email = htmlentities($email, ENT_QUOTES, "UTF-8");
 
         if ($rezultat = $connection->query(
-            sprintf("SELECT * FROM uzytkownicy WHERE user='%s'",
-                mysqli_real_escape_string($connection,$login))))
+            sprintf("SELECT * FROM uzytkownicy WHERE email='%s'",
+                mysqli_real_escape_string($connection,$email))))
         {
             $ilu_userow = $rezultat->num_rows;
             if($ilu_userow>0)
             {
                 $wiersz = $rezultat->fetch_assoc();
 
-                if (password_verify($haslo, $wiersz['pass']))
+                if (password_verify($haslo, $wiersz['Haslo']))
                 {
                     $_SESSION['zalogowany'] = true;
                     $_SESSION['id'] = $wiersz['id'];
-                    $_SESSION['user'] = $wiersz['user'];
+                    $_SESSION['email'] = $wiersz['email'];
                     $_SESSION['isAdmin'] = $wiersz['isAdmin'];
 
                     unset($_SESSION['blad']);
@@ -46,14 +46,14 @@ try
                 }
                 else
                 {
-                    $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
-                    header('Location: login.php');
+                    $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy Email lub hasło!</span>';
+                    //header('Location: login.php');
                 }
 
             } else {
 
-                $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
-                header('Location: login.php');
+                $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy Email lub hasło!</span>';
+                //header('Location: login.php');
 
             }
 

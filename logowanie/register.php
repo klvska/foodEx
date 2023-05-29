@@ -21,29 +21,18 @@ if(isset($_POST['email'])) {
         $_SESSION['e_email']="Podaj poprawny adres e-mail!";
     }
     $haslo1 = $_POST['haslo1'];
-    $haslo2 = $_POST['haslo2'];
+
     if ((strlen($haslo1)<8) || (strlen($haslo1)>20))
     {
         $wszystko_OK=false;
         $_SESSION['e_haslo']="Hasło musi posiadać od 8 do 20 znaków!";
     }
 
-    if ($haslo1!=$haslo2)
-    {
-        $wszystko_OK=false;
-        $_SESSION['e_haslo']="Podane hasła nie są identyczne!";
-    }
     $haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
-    if (!isset($_POST['regulamin']))
-    {
-        $wszystko_OK=false;
-        $_SESSION['e_regulamin']="Potwierdź akceptację regulaminu!";
-    }
+
     $_SESSION['fr_nick'] = $nick;
     $_SESSION['fr_email'] = $email;
     $_SESSION['fr_haslo1'] = $haslo1;
-    $_SESSION['fr_haslo2'] = $haslo2;
-    if (isset($_POST['regulamin'])) $_SESSION['fr_regulamin'] = true;
 
     require_once "../connection.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
@@ -57,6 +46,7 @@ if(isset($_POST['email'])) {
         }
         else
         {
+
             $rezultat = $connection->query("SELECT id FROM uzytkownicy WHERE email='$email'");
 
             if (!$rezultat) throw new Exception($connection->error);
@@ -67,7 +57,8 @@ if(isset($_POST['email'])) {
                 $wszystko_OK=false;
                 $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu e-mail!";
             }
-            $rezultat = $connection->query("SELECT id FROM uzytkownicy WHERE user='$nick'");
+
+            $rezultat = $connection->query("SELECT id FROM uzytkownicy WHERE Nazwa_uzytkownika='$nick'");
 
             if (!$rezultat) throw new Exception($connection->error);
 
@@ -81,7 +72,7 @@ if(isset($_POST['email'])) {
             if ($wszystko_OK==true)
             {
 
-                if ($connection->query("INSERT INTO uzytkownicy VALUES (NULL, '$nick', '$haslo_hash', '$email', 'false')"))
+                if ($connection->query("INSERT INTO uzytkownicy (imie,nazwisko,Nazwa_uzytkownika,email,Haslo,Administrator) VALUES ('','', '$nick','$email', '$haslo_hash','false')"))
                 {
                     $_SESSION['udanarejestracja']=true;
                     header('Location: welcome.php');
@@ -99,7 +90,7 @@ if(isset($_POST['email'])) {
     catch(Exception $e)
     {
         echo '<span style="color:red;">Błąd serwera!</span>';
-       // echo '<br />Inf '.$e;
+       echo '<br />Inf '.$e;
     }
 }
 ?>
@@ -126,7 +117,8 @@ if(isset($_POST['email'])) {
 
 <form method="post">
 
-    Nickname: <br> <input type="text" value="<?php
+
+    Nazwa użytkownika: <br> <input type="text" value="<?php
     if (isset($_SESSION['fr_nick']))
     {
         echo $_SESSION['fr_nick'];
@@ -174,38 +166,10 @@ if(isset($_POST['email'])) {
     }
     ?>
 
-    Powtórz hasło: <br><input type="password" value="<?php
-    if (isset($_SESSION['fr_haslo2']))
-    {
-        echo $_SESSION['fr_haslo2'];
-        unset($_SESSION['fr_haslo2']);
-    }
-    ?>" name="haslo2" /><br>
-
-    <label>
-        <input type="checkbox" name="regulamin" <?php
-        if (isset($_SESSION['fr_regulamin']))
-        {
-            echo "checked";
-            unset($_SESSION['fr_regulamin']);
-        }
-        ?>/> Akceptuję regulamin
-    </label>
-
-    <?php
-    if (isset($_SESSION['e_regulamin']))
-    {
-        echo '<div class="error">'.$_SESSION['e_regulamin'].'</div>';
-        unset($_SESSION['e_regulamin']);
-    }
-    ?>
 
     <br>
-
     <input type="submit" value="Zarejestruj się" />
-
     <br>
-
     <a href="login.php">Masz już konto</a>
 
 </form>
