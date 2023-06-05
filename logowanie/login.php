@@ -2,8 +2,9 @@
 
 session_start();
 
-if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true)) {
-    header('Location: dashboard.php');
+if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+{
+    header('Location: ../dashboard.php');
     exit();
 }
 
@@ -11,30 +12,30 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true)) {
 
 <!DOCTYPE HTML>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Logowanie</title>
+    <title>Jedzenie</title>
 </head>
 
 <body>
 
-    <form action="zaloguj.php" method="post">
-        <input type="text" name="login" placeholder="Login" /><br>
-        <input type="password" name="haslo" placeholder="Hasło" /><br>
-        <input type="submit" value="Zaloguj się" /><br>
-        <p>Nie masz konta?</p>
-        <button><a href="rejestracja.php">Zarejestruj się</a></button>
+Zaloguj<br ><br >
 
-    </form>
+<a href="register.php">Rejestracja - załóż konto!</a>
+<br /><br />
 
-    <?php
-    if (isset($_SESSION['blad'])) {
-        echo $_SESSION['blad'];
-    }
-    ?>
+<form action="login_action.php" method="post">
+
+    Email: <br /> <input type="text" name="login" /> <br />
+    Hasło: <br /> <input type="password" name="haslo" /> <br /><br />
+    <input type="submit" value="Zaloguj się" />
+
+</form>
+
+<?php
+if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
+?>
 
 </body>
-
 </html>
