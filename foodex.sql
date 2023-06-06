@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 03:37 PM
+-- Generation Time: Jun 06, 2023 at 06:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -32,8 +32,16 @@ CREATE TABLE `adresy` (
   `Miasto` text DEFAULT NULL,
   `Ulica` text DEFAULT NULL,
   `Nr_Domu_Mieszkania` int(11) DEFAULT NULL,
-  `Kod_Pocztowy` int(11) DEFAULT NULL
+  `Kod_Pocztowy` int(11) DEFAULT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `adresy`
+--
+
+INSERT INTO `adresy` (`id`, `Miasto`, `Ulica`, `Nr_Domu_Mieszkania`, `Kod_Pocztowy`, `id_user`) VALUES
+(45, 'tak', 'tak', 42, 44, 14);
 
 -- --------------------------------------------------------
 
@@ -111,7 +119,7 @@ INSERT INTO `uzytkownicy` (`id`, `Imie`, `Nazwisko`, `Nazwa_Uzytkownika`, `email
 (11, '', '', 'tomasz', '', '$2y$10$fTVUqg/0ZczzQiCH5AGIQO4vFtH7iddNRq5EqDk33DEr5q64ruES2', NULL, NULL, NULL, 0),
 (12, '', '', 'tomasz2', '', '$2y$10$f4rJmEHdVI5.bNiGb0CP2e/j80AdDr7XVapv3dRfyNQbQ./M9/wzm', NULL, NULL, NULL, 0),
 (13, '', '', 'jasiu', 'tomaszglogowski@gmail.com', '$2y$10$qYQut/ZYLFiSrGRFVwM7bet5I3Jd5tKQDyL4WVCh.9Ma2qu5TFuK2', NULL, NULL, NULL, 0),
-(14, '', '', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$r8NMUnd2yJWuQi4gIZ.lxuJjIhUaPsPIpqUVR.TpKQJTzbuReabdG', NULL, NULL, NULL, 0);
+(14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$kLKJ793VsGQo8Xi6hdJmmeVOlH8c1pV59MvX8eVW.2cprd/CZzLCO', NULL, 45, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -187,7 +195,7 @@ ALTER TABLE `zamowienia`
 -- AUTO_INCREMENT for table `adresy`
 --
 ALTER TABLE `adresy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `dania`
