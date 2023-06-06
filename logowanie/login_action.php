@@ -47,13 +47,13 @@ try
                 else
                 {
                     $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy Email lub hasło!</span>';
-                    //header('Location: login.php');
+                    header('Location: login.php');
                 }
 
             } else {
 
                 $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy Email lub hasło!</span>';
-                //header('Location: login.php');
+                header('Location: login.php');
 
             }
 
@@ -69,7 +69,7 @@ try
 catch(Exception $e)
 {
     echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o wizytę w innym terminie!</span>';
-    echo '<br />Informacja developerska: '.$e;
+    //echo '<br />Informacja developerska: '.$e;
 }
 ?>
 

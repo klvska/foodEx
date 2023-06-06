@@ -1,0 +1,114 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"406adb55-6626-4b7e-8720-6faa4bd8774a\" name=\"Changes\" comment=\"Create connection.php and dashboard.php. Refactor logowanie.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/connection.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/connection.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/dashboard.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/dashboard.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/logowanie/login.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logowanie/login.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/logowanie/login_action.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logowanie/login_action.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/logowanie/register.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logowanie/register.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/logowanie/welcome.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logowanie/welcome.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"test_sb\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n    <option name=\"recentBranches\">\r\n      <RecentBranches>\r\n        <option name=\"branchesForRepo\">\r\n          <list>\r\n            <RecentBranchesForRepo>\r\n              <option name=\"branches\">\r\n                <list>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"login\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1685121485\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"test_sb\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1685121377\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"tomasz\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1684827475\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"main\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1684827474\" />\r\n                  </RecentBranch>\r\n                </list>\r\n              </option>\r\n              <option name=\"repositoryRootUrl\" value=\"file://$PROJECT_DIR$\" />\r\n            </RecentBranchesForRepo>\r\n          </list>\r\n        </option>\r\n      </RecentBranches>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"PHP\" />\r\n  <component name=\"ProjectId\" id=\"2QBWSgsfoGgcLzJY2k7Q1szh3j8\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"406adb55-6626-4b7e-8720-6faa4bd8774a\" name=\"Changes\" comment=\"\" />\r\n      <created>1684827456306</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684827456306</updated>\r\n      <workItem from=\"1684827457936\" duration=\"1565000\" />\r\n      <workItem from=\"1684843223938\" duration=\"842000\" />\r\n      <workItem from=\"1685115434028\" duration=\"1094000\" />\r\n      <workItem from=\"1685121362665\" duration=\"91000\" />\r\n      <workItem from=\"1685121467469\" duration=\"3563000\" />\r\n      <workItem from=\"1685363430161\" duration=\"3896000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Create connection.php\">\r\n      <created>1684827546673</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684827546673</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Create connection.php and dashboard.php. Refactor logowanie.\">\r\n      <created>1685123839932</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685123839932</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Create connection.php\" />\r\n    <MESSAGE value=\"Create connection.php and dashboard.php. Refactor logowanie.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Create connection.php and dashboard.php. Refactor logowanie.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dd07203d2ab83eec12fe25797a997f4d4bd44fae)
++++ b/.idea/workspace.xml	(date 1685989419716)
+@@ -4,14 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create connection.php and dashboard.php. Refactor logowanie.">
++    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/logowanie/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/logowanie/login_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login_action.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/logowanie/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/welcome.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -24,7 +18,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="test_sb" />
++        <entry key="$PROJECT_DIR$" value="sms" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -39,20 +33,24 @@
+               <option name="branches">
+                 <list>
+                   <RecentBranch>
+-                    <option name="branchName" value="login" />
+-                    <option name="lastUsedInstant" value="1685121485" />
++                    <option name="branchName" value="main" />
++                    <option name="lastUsedInstant" value="1685987611" />
+                   </RecentBranch>
+                   <RecentBranch>
+-                    <option name="branchName" value="test_sb" />
+-                    <option name="lastUsedInstant" value="1685121377" />
++                    <option name="branchName" value="sms" />
++                    <option name="lastUsedInstant" value="1685430445" />
+                   </RecentBranch>
+                   <RecentBranch>
+-                    <option name="branchName" value="tomasz" />
+-                    <option name="lastUsedInstant" value="1684827475" />
++                    <option name="branchName" value="login" />
++                    <option name="lastUsedInstant" value="1685368425" />
+                   </RecentBranch>
+                   <RecentBranch>
+-                    <option name="branchName" value="main" />
+-                    <option name="lastUsedInstant" value="1684827474" />
++                    <option name="branchName" value="dashboard" />
++                    <option name="lastUsedInstant" value="1685367937" />
++                  </RecentBranch>
++                  <RecentBranch>
++                    <option name="branchName" value="test_sb" />
++                    <option name="lastUsedInstant" value="1685121377" />
+                   </RecentBranch>
+                 </list>
+               </option>
+@@ -77,7 +75,7 @@
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/Downloads/Insta-login-main/Insta-login-main&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+@@ -98,7 +96,9 @@
+       <workItem from="1685115434028" duration="1094000" />
+       <workItem from="1685121362665" duration="91000" />
+       <workItem from="1685121467469" duration="3563000" />
+-      <workItem from="1685363430161" duration="3896000" />
++      <workItem from="1685363430161" duration="4969000" />
++      <workItem from="1685430341888" duration="1991000" />
++      <workItem from="1685987594272" duration="1330000" />
+     </task>
+     <task id="LOCAL-00001" summary="Create connection.php">
+       <created>1684827546673</created>
+@@ -114,7 +114,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1685123839932</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika.">
++      <created>1685367439180</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1685367439180</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -123,6 +130,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Create connection.php" />
+     <MESSAGE value="Create connection.php and dashboard.php. Refactor logowanie." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Create connection.php and dashboard.php. Refactor logowanie." />
++    <MESSAGE value="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika." />
++    <option name="LAST_COMMIT_MESSAGE" value="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika." />
+   </component>
+ </project>
+\ No newline at end of file
