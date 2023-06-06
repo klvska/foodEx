@@ -105,21 +105,39 @@ if(isset($_POST['submit2'])){
         echo "Taki adres już istnieje.";
         exit;
     }else{
-        $query = "INSERT INTO `adresy` (Ulica, Nr_Domu_Mieszkania, Miasto, Kod_pocztowy,id_user) VALUES ('$ulica', '$nr_domu', '$miasto', '$kod_pocztowy', '$id_user')";
+        $query = "INSERT INTO `adresy` (Ulica, Nr_Domu_Mieszkania, Miasto, Kod_pocztowy, id_user) VALUES ('$ulica', '$nr_domu', '$miasto', '$kod_pocztowy', '$id_user')";
         if (mysqli_query($connection, $query)) {
             $query = "SELECT id FROM `adresy` WHERE Ulica = '$ulica' AND Nr_Domu_Mieszkania = '$nr_domu' AND Miasto = '$miasto' AND Kod_pocztowy = '$kod_pocztowy' AND id_user = '$id_user'";
             $result = mysqli_query($connection, $query);
             $row = mysqli_fetch_assoc($result);
             $id_adresu = $row['id'];
-            $query = "UPDATE `uzytkownicy` SET Adres='" . $id_adresu . "' WHERE id= '" . $id_user . "'";
-            $result = mysqli_query($connection, $query);
-
-
+            $query = "INSERT INTO `adresy_uzytkownicy` (id_adresu, id_user) VALUES ('$id_adresu', '$id_user')";
+            if (mysqli_query($connection, $query)) {
+                echo "Adres został dodany.";
+            } else {
+                echo "Wystąpił błąd podczas dodawania adresu: " . mysqli_error($connection);
+            }
         } else {
             echo "Wystąpił błąd podczas aktualizacji danych: " . mysqli_error($connection);
         }
     }
-
+}
+$query = "SELECT a.Ulica, a.Nr_Domu_Mieszkania, a.Miasto, a.Kod_pocztowy
+          FROM `adresy` a
+          INNER JOIN `adresy_uzytkownicy` au ON a.id = au.id_adresu
+          WHERE au.id_user = '$id_user'";
+$result = mysqli_query($connection, $query);
+if (mysqli_num_rows($result) > 0) {
+    echo "Wszystkie adresy:";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<br>";
+        echo "Ulica: " . $row['Ulica'] . "<br>";
+        echo "Nr domu/mieszkania: " . $row['Nr_Domu_Mieszkania'] . "<br>";
+        echo "Miasto: " . $row['Miasto'] . "<br>";
+        echo "Kod pocztowy: " . $row['Kod_pocztowy'] . "<br>";
+    }
+} else {
+    echo "Brak adresów.";
 }
 
 
