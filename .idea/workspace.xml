@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create connection.php and dashboard.php. Refactor logowanie.">
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Update user data change functionality&#10;&#10;This commit updates the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code verifies the uniqueness of the username and email address to ensure that only one user can have the same values. If a duplicate is found, an appropriate error message is displayed.&#10;&#10;Additionally, the code now includes a validation check for the password length. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;These changes enhance the security and functionality of the user data modification feature.&#10;&#10;Modified files:&#10;- dashboard.php">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/login_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login_action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/welcome.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +17,17 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test_sb" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,20 +42,24 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="dashboard" />
+                    <option name="lastUsedInstant" value="1686064209" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1685987611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="sms" />
+                    <option name="lastUsedInstant" value="1685430445" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="login" />
-                    <option name="lastUsedInstant" value="1685121485" />
+                    <option name="lastUsedInstant" value="1685368425" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="test_sb" />
                     <option name="lastUsedInstant" value="1685121377" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="tomasz" />
-                    <option name="lastUsedInstant" value="1684827475" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1684827474" />
                   </RecentBranch>
                 </list>
               </option>
@@ -72,19 +79,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Tomasz Glogowski/Downloads/Insta-login-main/Insta-login-main",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -98,7 +106,10 @@
       <workItem from="1685115434028" duration="1094000" />
       <workItem from="1685121362665" duration="91000" />
       <workItem from="1685121467469" duration="3563000" />
-      <workItem from="1685363430161" duration="3896000" />
+      <workItem from="1685363430161" duration="4969000" />
+      <workItem from="1685430341888" duration="1991000" />
+      <workItem from="1685987594272" duration="1330000" />
+      <workItem from="1686064156741" duration="4882000" />
     </task>
     <task id="LOCAL-00001" summary="Create connection.php">
       <created>1684827546673</created>
@@ -114,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685123839932</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika.">
+      <created>1685367439180</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685367439180</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update user data change functionality&#10;&#10;This commit updates the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code verifies the uniqueness of the username and email address to ensure that only one user can have the same values. If a duplicate is found, an appropriate error message is displayed.&#10;&#10;Additionally, the code now includes a validation check for the password length. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;These changes enhance the security and functionality of the user data modification feature.&#10;&#10;Modified files:&#10;- dashboard.php">
+      <created>1686065433477</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686065433477</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +148,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create connection.php" />
     <MESSAGE value="Create connection.php and dashboard.php. Refactor logowanie." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create connection.php and dashboard.php. Refactor logowanie." />
+    <MESSAGE value="Zrobiłem kodzik tak aby współpracował z tabelą użytkownicy. Działa rejstracja oraz logowanie. dashboard.php wyświetla póki co nazwę użytkownika." />
+    <MESSAGE value="Update user data change functionality&#10;&#10;This commit updates the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code verifies the uniqueness of the username and email address to ensure that only one user can have the same values. If a duplicate is found, an appropriate error message is displayed.&#10;&#10;Additionally, the code now includes a validation check for the password length. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;These changes enhance the security and functionality of the user data modification feature.&#10;&#10;Modified files:&#10;- dashboard.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update user data change functionality&#10;&#10;This commit updates the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code verifies the uniqueness of the username and email address to ensure that only one user can have the same values. If a duplicate is found, an appropriate error message is displayed.&#10;&#10;Additionally, the code now includes a validation check for the password length. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;These changes enhance the security and functionality of the user data modification feature.&#10;&#10;Modified files:&#10;- dashboard.php" />
   </component>
 </project>
