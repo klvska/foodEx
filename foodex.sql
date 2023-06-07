@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 06:56 PM
+-- Generation Time: Jun 07, 2023 at 08:10 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -110,7 +110,10 @@ CREATE TABLE `formy_platnosci` (
 CREATE TABLE `restauracje` (
   `id` int(11) NOT NULL,
   `nazwa_restauracji` text DEFAULT NULL,
-  `Miasto` text DEFAULT NULL
+  `Miasto` text DEFAULT NULL,
+  `opis` varchar(255) NOT NULL,
+  `lat` int(11) NOT NULL,
+  `lng` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -140,7 +143,7 @@ INSERT INTO `uzytkownicy` (`id`, `Imie`, `Nazwisko`, `Nazwa_Uzytkownika`, `email
 (11, '', '', 'tomasz', '', '$2y$10$fTVUqg/0ZczzQiCH5AGIQO4vFtH7iddNRq5EqDk33DEr5q64ruES2', NULL, NULL, NULL, 0),
 (12, '', '', 'tomasz2', '', '$2y$10$f4rJmEHdVI5.bNiGb0CP2e/j80AdDr7XVapv3dRfyNQbQ./M9/wzm', NULL, NULL, NULL, 0),
 (13, '', '', 'jasiu', 'tomaszglogowski@gmail.com', '$2y$10$qYQut/ZYLFiSrGRFVwM7bet5I3Jd5tKQDyL4WVCh.9Ma2qu5TFuK2', NULL, NULL, NULL, 0),
-(14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$kLKJ793VsGQo8Xi6hdJmmeVOlH8c1pV59MvX8eVW.2cprd/CZzLCO', NULL, NULL, NULL, 0);
+(14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$mJhDDLo7Ku3yAEvw3jAkQOeC.zzLS/3RH0Sfm7sbkwz.WMmBou0Y2', NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
