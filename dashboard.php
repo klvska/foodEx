@@ -10,6 +10,7 @@
 
 <body>
 <?php
+        ob_start();
         session_start();
         require "nav.php";
 ?>
@@ -17,7 +18,7 @@
   <?php      
         
 
-        if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] != true)) {
+        if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] != true)) {
             header('Location: logowanie/login.php');
             exit();
         }
