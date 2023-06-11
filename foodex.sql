@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 09:45 AM
+-- Generation Time: Jun 11, 2023 at 12:50 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -73,8 +73,31 @@ INSERT INTO `adresy_uzytkownicy` (`id`, `id_adresu`, `id_user`) VALUES
 CREATE TABLE `dania` (
   `id` int(11) NOT NULL,
   `Nazwa` text DEFAULT NULL,
-  `Cena` float DEFAULT NULL
+  `Cena` float DEFAULT NULL,
+  `w_kaloryczna` int(11) NOT NULL,
+  `alergeny` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dania`
+--
+
+INSERT INTO `dania` (`id`, `Nazwa`, `Cena`, `w_kaloryczna`, `alergeny`) VALUES
+(1, 'Spaghetti Bolognese', 12.99, 800, 'Gluten, Jaja'),
+(2, 'Grilled Salmon', 15.5, 600, 'Ryby'),
+(3, 'Chicken Tikka Masala', 10.99, 700, 'Mleko'),
+(4, 'Margherita Pizza', 9.75, 550, 'Gluten, Laktoza'),
+(5, 'Caesar Salad', 8.99, 400, 'Jaja, Laktoza'),
+(6, 'Beef Stir-Fry', 13.25, 750, 'Soja'),
+(7, 'Mushroom Risotto', 11.5, 600, 'Gluten'),
+(8, 'Lemon Herb Roast Chicken', 14.99, 850, 'Brak'),
+(9, 'Vegan Buddha Bowl', 12.5, 500, 'Orzechy'),
+(10, 'Shrimp Pad Thai', 13.99, 650, 'Orzechy, Kraby'),
+(11, 'Spinach and Feta Stuffed Chicken Breast', 11.75, 600, 'Mleko'),
+(12, 'Vegetable Curry', 9.5, 550, 'Brak'),
+(13, 'BBQ Ribs', 16.99, 900, 'Soja'),
+(14, 'Eggplant Parmesan', 10.5, 500, 'Gluten, Jaja'),
+(15, 'Tiramisu', 7.99, 450, 'Jaja, Kawa');
 
 -- --------------------------------------------------------
 
@@ -254,7 +277,7 @@ ALTER TABLE `adresy_uzytkownicy`
 -- AUTO_INCREMENT for table `dania`
 --
 ALTER TABLE `dania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `dania_w_restauracji_xd`
