@@ -228,7 +228,7 @@
           <li><a class="menu__item" href="index.php">Home</a></li>
           <li><a class="menu__item" href="products.php">Menu</a></li>
           <li><a class="menu__item" href="map.php">Map</a></li>
-          <li><a class="menu__item" href="#">Contact</a></li>
+          <li><a class="menu__item" href="contact.php">Contact</a></li>
         </ul>
       </div>
 

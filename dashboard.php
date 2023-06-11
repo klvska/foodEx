@@ -1,63 +1,63 @@
-<?php
-session_start();
-
-if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
-{
-    header('Location: logowanie/login.php');
-    exit();
-}
-
-?>
-
 <!DOCTYPE HTML>
 <html lang="pl">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Panel użytkownika</title>
-        <link rel="stylesheet" href="dashboard.css">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Panel użytkownika</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
 <body>
 <?php
-    require_once "./connection.php";
-    require_once "./nav.php";
-    $id_user = $_SESSION['id'];
-    $sql = "SELECT * FROM `uzytkownicy` WHERE id= '".$id_user."'";
-    $result = mysqli_query($connection, $sql);
+        session_start();
+        require "nav.php";
+?>
+    <div class="container">
+  <?php      
+        
 
+        if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] != true)) {
+            header('Location: logowanie/login.php');
+            exit();
+        }
 
-// Formularz zmiany danych
-    while($row = mysqli_fetch_assoc($result))
-    {
-        echo "Witaj ".$row['Nazwa_Uzytkownika']."!";
-        echo "<br>";
-        echo '<a id="logout-b" href="logowanie/logout.php">Wyloguj się</a>';
-        echo "<br>";
-        echo "<form action='dashboard.php' method='post'>";
+        require_once "connection.php";
+        $id_user = $_SESSION['id'];
+        $sql = "SELECT * FROM `uzytkownicy` WHERE id= '".$id_user."'";
+        $result = mysqli_query($connection, $sql);
+
+        // Formularz zmiany danych
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<h1>Witaj ".$row['Nazwa_Uzytkownika']."!</h1>";
+            echo '<a id="logout-b" href="logowanie/logout.php">Wyloguj się</a>';
+            echo '<a href="index.php">Strona główna</a>';
+            echo "<br>";
+            echo "<form action='dashboard.php' method='post'>";
             echo "<input type='text' name='imie' value='".$row['Imie']."' placeholder='imie'>";
-            echo "<input type='text' name='nazwisko' value='".$row['Nazwisko']."' placeholder='nazwisko' >";
+            echo "<input type='text' name='nazwisko' value='".$row['Nazwisko']."' placeholder='nazwisko'>";
             echo "<input type='text' name='nazwa_u' value='".$row['Nazwa_Uzytkownika']."'>";
             echo "<input type='text' name='email' value='".$row['email']."'>";
-            echo "<input type='password' name='haslo' >";
+            echo "<input type='password' name='haslo'>";
             echo "<input type='submit' name='submit' value='Zmień'>";
+            echo "</form>";
+        }
+
+        // Formularz dodawania adresu
+        echo "<div class='adres-form'>";
+        echo "<h2>Adres</h2>";
+        echo "<form action='dashboard.php' method='post'>";
+        echo "<input type='text' name='ulica' placeholder='Ulica' required>";
+        echo "<input type='text' name='nr_domu' placeholder='Numer domu' required>";
+        echo "<input type='text' name='miasto' placeholder='Miasto' required>";
+        echo "<input type='text' name='kod_pocztowy' placeholder='kod pocztowy' required>";
+        echo "<input type='submit' name='submit2' value='Dodaj'>";
         echo "</form>";
-    }
+        echo "</div>";
 
-
-//Formularz dodawania adresu
-echo "<br>";
-echo "Adres";
-echo "<br>";
-echo "<form action = 'dashboard.php' method = 'post'>";
-echo "<input type='text' name='ulica' placeholder='Ulica' required>";
-echo "<input type='text' name='nr_domu' placeholder='Numer domu' required>";
-echo "<input type='text' name='miasto' placeholder='Miasto' required>";
-echo "<input type='text' name='kod_pocztowy' placeholder='kod pocztowy' required>";
-echo "<input type='submit' name='submit2' value='Dodaj'>";
-echo "</form>";
-// Zmiana danych
-if(isset($_POST['submit'])) {
-    $imie = $_POST['imie'];
+        // Zmiana danych
+        if (isset($_POST['submit'])) {
+            $imie = $_POST['imie'];
     $nazwisko = $_POST['nazwisko'];
     $nazwa_u = $_POST['nazwa_u'];
     $email = $_POST['email'];
@@ -94,9 +94,11 @@ if(isset($_POST['submit'])) {
         echo "Wystąpił błąd podczas aktualizacji danych: " . mysqli_error($connection);
     }
 }
-// Dodawanie adresu
-if(isset($_POST['submit2'])){
-    $ulica = $_POST['ulica'];
+        
+
+        // Dodawanie adresu
+        if (isset($_POST['submit2'])) {
+            $ulica = $_POST['ulica'];
     $nr_domu = $_POST['nr_domu'];
     $miasto = $_POST['miasto'];
     $kod_pocztowy = $_POST['kod_pocztowy'];
@@ -122,31 +124,29 @@ if(isset($_POST['submit2'])){
             echo "Wystąpił błąd podczas aktualizacji danych: " . mysqli_error($connection);
         }
     }
-}
-$query = "SELECT a.Ulica, a.Nr_Domu_Mieszkania, a.Miasto, a.Kod_pocztowy
-          FROM `adresy` a
-          INNER JOIN `adresy_uzytkownicy` au ON a.id = au.id_adresu
-          WHERE au.id_user = '$id_user'";
-$result = mysqli_query($connection, $query);
-if (mysqli_num_rows($result) > 0) {
-    echo "Wszystkie adresy:";
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<br>";
-        echo "Ulica: " . $row['Ulica'] . "<br>";
-        echo "Nr domu/mieszkania: " . $row['Nr_Domu_Mieszkania'] . "<br>";
-        echo "Miasto: " . $row['Miasto'] . "<br>";
-        echo "Kod pocztowy: " . $row['Kod_pocztowy'] . "<br>";
-    }
-} else {
-    echo "Brak adresów.";
-}
+        }
 
-
-
-
-
-?>
+        $query = "SELECT a.Ulica, a.Nr_Domu_Mieszkania, a.Miasto, a.Kod_pocztowy
+                  FROM `adresy` a
+                  INNER JOIN `adresy_uzytkownicy` au ON a.id = au.id_adresu
+                  WHERE au.id_user = '$id_user'";
+        $result = mysqli_query($connection, $query);
+        if (mysqli_num_rows($result) > 0) {
+            echo "<div class='adresy'>";
+            echo "<h2>Wszystkie adresy:</h2>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<div class='adres'>";
+                echo "<p>Ulica: " . $row['Ulica'] . "</p>";
+                echo "<p>Nr domu/mieszkania: " . $row['Nr_Domu_Mieszkania'] . "</p>";
+                echo "<p>Miasto: " . $row['Miasto'] . "</p>";
+                echo "<p>Kod pocztowy: " . $row['Kod_pocztowy'] . "</p>";
+                echo "</div>";
+            }
+            echo "</div>";
+        } else {
+            echo "<p>Brak adresów.</p>";
+        }
+        ?>
+    </div>
 </body>
 </html>
-
-
