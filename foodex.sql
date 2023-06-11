@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 03:36 PM
+-- Generation Time: Jun 11, 2023 at 07:15 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -140,6 +140,18 @@ CREATE TABLE `koszyk` (
   `data_dodania` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `koszyk`
+--
+
+INSERT INTO `koszyk` (`id`, `uzytkownik_id`, `produkt_id`, `nazwa`, `cena`, `ilosc`, `data_dodania`) VALUES
+(6, 14, 2, 'Grilled Salmon', '15.50', 1, '2023-06-11 16:28:25'),
+(9, 14, 1, 'Spaghetti Bolognese', '12.99', 1, '2023-06-11 16:48:23'),
+(10, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:49:13'),
+(11, 14, 8, 'Lemon Herb Roast Chicken', '14.99', 1, '2023-06-11 16:49:23'),
+(12, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:49:31'),
+(13, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:57:12');
+
 -- --------------------------------------------------------
 
 --
@@ -197,7 +209,8 @@ INSERT INTO `uzytkownicy` (`id`, `Imie`, `Nazwisko`, `Nazwa_Uzytkownika`, `email
 (11, '', '', 'tomasz', '', '$2y$10$fTVUqg/0ZczzQiCH5AGIQO4vFtH7iddNRq5EqDk33DEr5q64ruES2', NULL, NULL, NULL, 0),
 (12, '', '', 'tomasz2', '', '$2y$10$f4rJmEHdVI5.bNiGb0CP2e/j80AdDr7XVapv3dRfyNQbQ./M9/wzm', NULL, NULL, NULL, 0),
 (13, '', '', 'jasiu', 'tomaszglogowski@gmail.com', '$2y$10$qYQut/ZYLFiSrGRFVwM7bet5I3Jd5tKQDyL4WVCh.9Ma2qu5TFuK2', NULL, NULL, NULL, 0),
-(14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$mJhDDLo7Ku3yAEvw3jAkQOeC.zzLS/3RH0Sfm7sbkwz.WMmBou0Y2', NULL, NULL, NULL, 0);
+(14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$mJhDDLo7Ku3yAEvw3jAkQOeC.zzLS/3RH0Sfm7sbkwz.WMmBou0Y2', NULL, NULL, NULL, 0),
+(15, '', '', 'ToZiomek', 'tomaszglock@gmail.com', '$2y$10$dxoOhCkHppSQSSipXn0yhOs8Ejk30Ziup.eKsvRoa7prrbIjT2lhK', NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -210,7 +223,8 @@ CREATE TABLE `zamowienia` (
   `id_dan` int(11) DEFAULT NULL,
   `Cena` float DEFAULT NULL,
   `Adres` int(11) DEFAULT NULL,
-  `id_adresu` int(11) NOT NULL
+  `id_adresu` int(11) NOT NULL,
+  `ilosc_dan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -322,7 +336,7 @@ ALTER TABLE `formy_platnosci`
 -- AUTO_INCREMENT for table `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `restauracje`
@@ -334,7 +348,7 @@ ALTER TABLE `restauracje`
 -- AUTO_INCREMENT for table `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `zamowienia`

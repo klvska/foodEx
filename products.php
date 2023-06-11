@@ -4,38 +4,48 @@ require_once "connection.php";
 session_start();
 
 
-function dodajDoKoszyka($produktId) {
+function dodajDoKoszyka($produktId)
+{
 
-global $connection;
-$sql = "SELECT * FROM `dania` WHERE `id` = $produktId";
-$result = $connection->query($sql);
-if ($result === false || $result->num_rows === 0) {
-die("Nieprawidłowy produkt.");
+
+
+        global $connection;
+        $sql = "SELECT * FROM `dania` WHERE `id` = $produktId";
+        $result = $connection->query($sql);
+        if ($result === false || $result->num_rows === 0) {
+            die("Nieprawidłowy produkt.");
+        }
+
+
+        $row = $result->fetch_assoc();
+        $produktNazwa = $row['Nazwa'];
+        $produktCena = $row['Cena'];
+        $uzytkownikId = $_SESSION['id'];
+        $ilosc = 1;
+
+
+        $sql = "INSERT INTO `koszyk` (`uzytkownik_id`, `produkt_id`, `nazwa`, `cena`, `ilosc`)
+        VALUES ($uzytkownikId, $produktId, '$produktNazwa', $produktCena, $ilosc)";
+        $result = $connection->query($sql);
+        if ($result === false) {
+            die("Błąd podczas dodawania produktu do koszyka: " . $connection->error);
+        }
+
+        echo "<script> alert('Produkt $produktNazwa został dodany do koszyka.')</script>";
 }
 
-
-$row = $result->fetch_assoc();
-$produktNazwa = $row['Nazwa'];
-$produktCena = $row['Cena'];
-$uzytkownikId = $_SESSION['id'];
-$ilosc = 1;
-
-
-$sql = "INSERT INTO `koszyk` (`uzytkownik_id`, `produkt_id`, `nazwa`, `cena`, `ilosc`)
-VALUES ($uzytkownikId, $produktId, '$produktNazwa', $produktCena, $ilosc)";
-$result = $connection->query($sql);
-if ($result === false) {
-die("Błąd podczas dodawania produktu do koszyka: " . $connection->error);
-}
-
-echo "<script> alert('Produkt $produktNazwa został dodany do koszyka.')</script>";
-}
+    if (isset($_GET["id"])) {
+        $produktId = $_GET["id"];
+        if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
+        {
+            header('Location: logowanie/login.php');
+            exit();
+        }else{
+            dodajDoKoszyka($produktId);
+        }
 
 
-if (isset($_GET["id"])) {
-$produktId = $_GET["id"];
-dodajDoKoszyka($produktId);
-}
+    }
 
 
 $sql = "SELECT * FROM `dania`";

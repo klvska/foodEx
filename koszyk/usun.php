@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nazwa'])) {
         $nazwaProduktu = $_POST['nazwa'];
 
-        // Usunięcie produktu z koszyka
         $deleteSql = "DELETE FROM koszyk WHERE nazwa = '$nazwaProduktu' AND uzytkownik_id = $uzytkownik_id";
         $deleteResult = $connection->query($deleteSql);
 
