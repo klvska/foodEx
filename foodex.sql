@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 03:22 PM
+-- Generation Time: Jun 11, 2023 at 03:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -127,6 +127,22 @@ CREATE TABLE `formy_platnosci` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `koszyk`
+--
+
+CREATE TABLE `koszyk` (
+  `id` int(11) NOT NULL,
+  `uzytkownik_id` int(11) DEFAULT NULL,
+  `produkt_id` int(11) DEFAULT NULL,
+  `nazwa` varchar(255) DEFAULT NULL,
+  `cena` decimal(10,2) DEFAULT NULL,
+  `ilosc` int(11) DEFAULT NULL,
+  `data_dodania` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `restauracje`
 --
 
@@ -237,6 +253,14 @@ ALTER TABLE `formy_platnosci`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `koszyk`
+--
+ALTER TABLE `koszyk`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `uzytkownik_id` (`uzytkownik_id`),
+  ADD KEY `produkt_id` (`produkt_id`);
+
+--
 -- Indexes for table `restauracje`
 --
 ALTER TABLE `restauracje`
@@ -295,6 +319,12 @@ ALTER TABLE `formy_platnosci`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `koszyk`
+--
+ALTER TABLE `koszyk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `restauracje`
 --
 ALTER TABLE `restauracje`
@@ -329,6 +359,13 @@ ALTER TABLE `adresy_uzytkownicy`
 ALTER TABLE `dania_w_restauracji_xd`
   ADD CONSTRAINT `dania_w_restauracji_xd_ibfk_1` FOREIGN KEY (`id_res`) REFERENCES `restauracje` (`id`),
   ADD CONSTRAINT `dania_w_restauracji_xd_ibfk_2` FOREIGN KEY (`id_Dania`) REFERENCES `dania` (`id`);
+
+--
+-- Constraints for table `koszyk`
+--
+ALTER TABLE `koszyk`
+  ADD CONSTRAINT `koszyk_ibfk_1` FOREIGN KEY (`uzytkownik_id`) REFERENCES `uzytkownicy` (`id`),
+  ADD CONSTRAINT `koszyk_ibfk_2` FOREIGN KEY (`produkt_id`) REFERENCES `dania` (`id`);
 
 --
 -- Constraints for table `uzytkownicy`

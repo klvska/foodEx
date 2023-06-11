@@ -11,6 +11,7 @@ if ($result === false) {
 
 while ($row = $result->fetch_assoc()) {
     echo "<a href='product.php?id=" . $row['id'] . "'>" . $row['Nazwa'] . "</a><br>";
+    echo "<a href='koszyk/dodaj.php?id=" . $row['id'] . "'>Dodaj do koszyka</a><br><br>";
 }
 
 $connection->close();
