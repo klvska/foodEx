@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Enhancements in map.php file: updated map view covering the entire Poland, and data is now retrieved from the database.">
-      <change afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Add list of products (products.php). product.php show data of product from table 'dania'. Update sql. Update structure table 'dania' and add records.">
+      <change afterPath="$PROJECT_DIR$/zamowienie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodex.sql" beforeDir="false" afterPath="$PROJECT_DIR$/foodex.sql" afterDir="false" />
     </list>
@@ -45,6 +43,14 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="zamowienie" />
+                    <option name="lastUsedInstant" value="1686481463" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1686480613" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="product" />
                     <option name="lastUsedInstant" value="1686470781" />
                   </RecentBranch>
@@ -55,14 +61,6 @@
                   <RecentBranch>
                     <option name="branchName" value="dashboard" />
                     <option name="lastUsedInstant" value="1686064209" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1685987611" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="sms" />
-                    <option name="lastUsedInstant" value="1685430445" />
                   </RecentBranch>
                 </list>
               </option>
@@ -88,7 +86,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Tomasz Glogowski/Downloads/Insta-login-main/Insta-login-main",
+    "last_opened_file_path": "C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -99,6 +97,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomasz Glogowski\PhpstormProjects\untitled\foodEx" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tomasz Glogowski\PhpstormProjects\untitled\foodEx" />
     </key>
@@ -187,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686469684978</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add list of products (products.php). product.php show data of product from table 'dania'. Update sql. Update structure table 'dania' and add records.">
+      <created>1686480682706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686480682706</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +211,7 @@
     <MESSAGE value="First map using leaflet and www.openstreetmap.org. Add testing points." />
     <MESSAGE value="Update table 'restauracje'" />
     <MESSAGE value="Enhancements in map.php file: updated map view covering the entire Poland, and data is now retrieved from the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhancements in map.php file: updated map view covering the entire Poland, and data is now retrieved from the database." />
+    <MESSAGE value="Add list of products (products.php). product.php show data of product from table 'dania'. Update sql. Update structure table 'dania' and add records." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add list of products (products.php). product.php show data of product from table 'dania'. Update sql. Update structure table 'dania' and add records." />
   </component>
 </project>

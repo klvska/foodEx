@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 12:50 PM
+-- Generation Time: Jun 11, 2023 at 03:22 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -193,7 +193,8 @@ CREATE TABLE `zamowienia` (
   `id` int(11) NOT NULL,
   `id_dan` int(11) DEFAULT NULL,
   `Cena` float DEFAULT NULL,
-  `Adres` int(11) DEFAULT NULL
+  `Adres` int(11) DEFAULT NULL,
+  `id_adresu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -211,6 +212,7 @@ ALTER TABLE `adresy`
 --
 ALTER TABLE `adresy_uzytkownicy`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_adresu` (`id`),
   ADD KEY `fk_adresy_uzytkownicy_adresy` (`id_adresu`),
   ADD KEY `fk_adresy_uzytkownicy_uzytkownicy` (`id_user`);
 
@@ -254,6 +256,7 @@ ALTER TABLE `uzytkownicy`
 --
 ALTER TABLE `zamowienia`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_adresu` (`id_adresu`),
   ADD KEY `id_dan` (`id_dan`),
   ADD KEY `zamowienia_ibfk_2` (`Adres`);
 
