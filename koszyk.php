@@ -9,7 +9,7 @@ if ($result === false) {
     die("Błąd zapytania SQL: " . $connection->error);
 }
 
-if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] != true)) {
+if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] != true)) {
     header('Location: ../logowanie/login.php');
     exit();
 }

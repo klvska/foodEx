@@ -9,6 +9,8 @@
 </head>
 <body>
     <?php
+    ob_start();
+    session_start();
     require 'nav.php';
     ?>
 <form class="wyszukaj" action="products.php.php" method="post">
@@ -55,7 +57,7 @@ function dodajDoKoszyka($produktId)
 
     if (isset($_GET["id"])) {
         $produktId = $_GET["id"];
-        if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
+        if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany']!=true))
         {
             header('Location: logowanie/login.php');
             exit();
