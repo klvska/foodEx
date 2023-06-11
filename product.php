@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Jedzenie</title>
@@ -61,7 +62,15 @@ require_once "nav.php";
                 echo "<p>Cena: " . $row['Cena'] . "</p>";
                 echo "<p>Wartość kaloryczna: " . $row['w_kaloryczna'] . "</p>";
                 echo "<p>Alergeny: " . $row['alergeny'] . "</p>";
-
+                echo "<p>Wartość kaloryczna: " . $row['w_kaloryczna'] . "</p>";
+                ?>
+                  <script>
+                     var kalorycznaValue = <?php echo $row['w_kaloryczna']; ?>;
+                     var kalorycznaValue1 = <?php echo $row['w_kaloryczna']/3; ?>;
+                 </script>
+                <div id="progressBarContainer"></div>
+                <div id="progressBarContainer1"></div>
+                <?php
                 // Formularz dodawania do koszyka
                 echo '<form action="koszyk/dodaj.php" method="POST">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
@@ -78,5 +87,58 @@ require_once "nav.php";
         $connection->close();
         ?>
     </div>
+    <script>
+        var progressBar = new ProgressBar.Line('#progressBarContainer', {  
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#ED7014',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: { width: '100%', height: '100%' },
+  text: {
+    style: {
+      // Text styles
+    },
+    autoStyleContainer: false
+  },
+  from: { color: '#FFEA82' },
+  to: { color: '#ED6A5A' },
+  step: function(state, bar) {
+    bar.setText(Math.round(bar.value() * 3000) + ' / 3000 kcal dziennie');
+  }
+});
+
+function updateProgressBar(value) {
+  progressBar.animate(value / 3000); // Aktualizuje wartość paska w zakresie od 0 do 1
+}
+updateProgressBar(kalorycznaValue)
+
+
+var progressBar = new ProgressBar.Line('#progressBarContainer1', {  
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#ED7014',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: { width: '100%', height: '100%' },
+  text: {
+    style: {
+      // Text styles
+    },
+    autoStyleContainer: false
+  },
+  from: { color: '#FFEA82' },
+  to: { color: '#ED6A5A' },
+  step: function(state, bar) {
+    bar.setText(Math.round(bar.value() * 3000) + ' / 3000 kcal w kawałku');
+  }
+});
+function updateProgressBar(value) {
+  progressBar.animate(value / 3000); // Aktualizuje wartość paska w zakresie od 0 do 1
+}
+updateProgressBar(kalorycznaValue1)
+</script>  
 </body>
 </html>
