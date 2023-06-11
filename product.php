@@ -19,6 +19,14 @@ if (isset($_GET['id'])) {
         echo "Cena: " . $row['Cena'] . "<br>";
         echo "Wartość kaloryczna: " . $row['w_kaloryczna'] . "<br>";
         echo "Alergeny: " . $row['alergeny'] . "<br>";
+
+        // Formularz dodawania do koszyka
+        echo '<form action="koszyk/dodaj.php" method="POST">';
+        echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+        echo '<input type="hidden" name="nazwa" value="' . $row['Nazwa'] . '">';
+        echo '<input type="hidden" name="cena" value="' . $row['Cena'] . '">';
+        echo '<input type="submit" value="Dodaj do koszyka">';
+        echo '</form>';
     } else {
         echo "Produkt o podanym ID nie został znaleziony.";
     }

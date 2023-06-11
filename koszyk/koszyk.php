@@ -2,16 +2,14 @@
 require_once "../connection.php";
 session_start();
 $uzytkownik_id = $_SESSION['id'];
-$sql = "SELECT * FROM koszyk WHERE uzytkownik_id = $uzytkownik_id";
+$sql = "SELECT nazwa, cena, SUM(ilosc) as suma_ilosci FROM koszyk WHERE uzytkownik_id = $uzytkownik_id GROUP BY nazwa, cena";
 $result = $connection->query($sql);
 
 if ($result === false) {
     die("Błąd zapytania SQL: " . $connection->error);
 }
 
-
-if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
-{
+if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] != true)) {
     header('Location: ../logowanie/login.php');
     exit();
 }
@@ -28,15 +26,25 @@ if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
 <h1>Koszyk</h1>
 
 <?php
+$totalSum = 0;
+$totalQuantity = 0;
+
 if ($result->num_rows > 0) {
     // Wyświetl produkty w koszyku
     while ($row = $result->fetch_assoc()) {
         echo "<p>Nazwa: " . $row['nazwa'] . "</p>";
         echo "<p>Cena: " . $row['cena'] . "</p>";
-        echo "<p>Ilość: " . $row['ilosc'] . "</p>";
+        echo "<p>Ilość: " . $row['suma_ilosci'] . "</p>";
+
+        $subtotal = $row['cena'] * $row['suma_ilosci'];
+        $totalSum += $subtotal;
+        $totalQuantity += $row['suma_ilosci'];
+        echo "<form action=\"../koszyk/usun.php\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"nazwa\" value=\"" . $row['nazwa'] . "\">";
+        echo "<input type=\"submit\" value=\"Usuń\">";
+        echo "</form>";
     }
 
-    // Wyświetl przycisk do zamówienia
     echo '<form action="../zamowienie.php" method="POST">';
     echo '<input type="submit" value="Zamów">';
     echo '</form>';
@@ -44,11 +52,10 @@ if ($result->num_rows > 0) {
     echo "<p>Koszyk jest pusty.</p>";
 }
 
+echo "<p>Suma: " . $totalSum . "</p>";
+echo "<p>Ilość produktów: " . $totalQuantity . "</p>";
+
 $connection->close();
-
-
-
-
 ?>
 </body>
 </html>
