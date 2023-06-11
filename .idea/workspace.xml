@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Add Visibility multiple addresses for a user&#10;&#10;- Added the ability to associate multiple addresses with a user in the code.&#10;- Modified the database structure to include the 'adresy_uzytkownicy' table for managing the relationship between addresses and users.&#10;- Updated the SQL queries to retrieve and display all addresses associated with a user.&#10;- Created a new table 'adresy_uzytkownicy' to store the relationship between addresses and users.&#10;- Updated the 'zamowienia' table to reference the 'adresy_uzytkownicy' table for the 'Adres' foreign key.&#10;&#10;Please review the changes and ensure that the code and database structure are working as expected.">
-      <change afterPath="$PROJECT_DIR$/map.php" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Update table 'restauracje'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodex.sql" beforeDir="false" afterPath="$PROJECT_DIR$/foodex.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.php" beforeDir="false" afterPath="$PROJECT_DIR$/map.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +117,9 @@
       <workItem from="1685430341888" duration="1991000" />
       <workItem from="1685987594272" duration="1330000" />
       <workItem from="1686064156741" duration="7845000" />
-      <workItem from="1686160058631" duration="1010000" />
+      <workItem from="1686160058631" duration="1404000" />
+      <workItem from="1686334170531" duration="333000" />
+      <workItem from="1686464799887" duration="4154000" />
     </task>
     <task id="LOCAL-00001" summary="Create connection.php">
       <created>1684827546673</created>
@@ -159,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686070780397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="First map using leaflet and www.openstreetmap.org. Add testing points.">
+      <created>1686161247737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686161247737</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update table 'restauracje'">
+      <created>1686161488420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686161488420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +190,8 @@
     <MESSAGE value="Update user data change functionality&#10;&#10;This commit updates the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code verifies the uniqueness of the username and email address to ensure that only one user can have the same values. If a duplicate is found, an appropriate error message is displayed.&#10;&#10;Additionally, the code now includes a validation check for the password length. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;These changes enhance the security and functionality of the user data modification feature.&#10;&#10;Modified files:&#10;- dashboard.php" />
     <MESSAGE value="Refactor user data change functionality and fix bugs&#10;&#10;This commit refactors the code responsible for changing user data in the dashboard. The form now allows users to modify their information and submit the changes by clicking the &quot;Zmień&quot; button.&#10;&#10;The code includes a check for duplicate usernames and email addresses to ensure uniqueness. If a duplicate is found, an appropriate error message is displayed to the user.&#10;&#10;Additionally, a validation check for the password length has been implemented. If the provided password is not between 8 and 20 characters, an error message is shown.&#10;&#10;In addition to these improvements, this commit also addresses several bugs from the previous version.&#10;&#10;Modified files:&#10;&#10;dashboard.php: This file now includes the updated code for changing user data, which ensures the uniqueness of usernames and email addresses, and validates the password length.&#10;Bug fixes:&#10;&#10;Fixed a bug where the code would incorrectly insert a duplicate address into the database. Now, if a duplicate address is found, an error message is displayed, and the changes are not saved.&#10;Fixed a bug in the query for updating the user's address, where the address ID was not properly assigned.&#10;Fixed several other minor bugs and improved error handling.&#10;These changes enhance the security and functionality of the user data modification feature, ensuring a smoother experience for users." />
     <MESSAGE value="Add Visibility multiple addresses for a user&#10;&#10;- Added the ability to associate multiple addresses with a user in the code.&#10;- Modified the database structure to include the 'adresy_uzytkownicy' table for managing the relationship between addresses and users.&#10;- Updated the SQL queries to retrieve and display all addresses associated with a user.&#10;- Created a new table 'adresy_uzytkownicy' to store the relationship between addresses and users.&#10;- Updated the 'zamowienia' table to reference the 'adresy_uzytkownicy' table for the 'Adres' foreign key.&#10;&#10;Please review the changes and ensure that the code and database structure are working as expected." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Visibility multiple addresses for a user&#10;&#10;- Added the ability to associate multiple addresses with a user in the code.&#10;- Modified the database structure to include the 'adresy_uzytkownicy' table for managing the relationship between addresses and users.&#10;- Updated the SQL queries to retrieve and display all addresses associated with a user.&#10;- Created a new table 'adresy_uzytkownicy' to store the relationship between addresses and users.&#10;- Updated the 'zamowienia' table to reference the 'adresy_uzytkownicy' table for the 'Adres' foreign key.&#10;&#10;Please review the changes and ensure that the code and database structure are working as expected." />
+    <MESSAGE value="First map using leaflet and www.openstreetmap.org. Add testing points." />
+    <MESSAGE value="Update table 'restauracje'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update table 'restauracje'" />
   </component>
 </project>
