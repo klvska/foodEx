@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create index.php. Change location nav.php.">
-      <change afterPath="$PROJECT_DIR$/koszyk/dodaj.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/koszyk/usun.php" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koszyk/koszyk.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/koszyk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686500325249</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart.">
+      <created>1686502816400</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686502816400</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +250,7 @@
     <MESSAGE value="Update structure sql. Add table koszyk." />
     <MESSAGE value="Created koszyk.php, but zamowienie.php requires further debugging" />
     <MESSAGE value="Create index.php. Change location nav.php." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create index.php. Change location nav.php." />
+    <MESSAGE value="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart." />
   </component>
 </project>
