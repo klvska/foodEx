@@ -20,6 +20,7 @@ if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']!=true))
 <body>
 <?php
     require_once "./connection.php";
+    require_once "./nav.php";
     $id_user = $_SESSION['id'];
     $sql = "SELECT * FROM `uzytkownicy` WHERE id= '".$id_user."'";
     $result = mysqli_query($connection, $sql);

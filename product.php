@@ -7,7 +7,7 @@
 <body>
 <?php
 require_once "connection.php";
-
+require_once "nav.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 

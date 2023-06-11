@@ -1,6 +1,8 @@
 <?php
-require_once "connection.php";
 session_start();
+require_once "connection.php";
+require_once "nav.php";
+
 
 if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] != true)) {
     header('Location: logowanie/login.php');
@@ -36,14 +38,14 @@ if ($result->num_rows > 0) {
     echo "<p>Ilość produktów: " . $totalQuantity . "</p>";
 
     echo "<h2>Wybierz formę dostawy:</h2>";
-    echo '<form action="przetwarzanie_zamowienia.php" method="POST">';
+    echo '<form action="zamowienie_action.php" method="POST">';
     echo '<label for="dostawa">Dostawa do domu:</label>';
     echo '<input type="radio" id="dostawa" name="dostawa" value="dom">';
     echo '<br>';
     echo '<label for="dostawa">Odbiór w restauracji:</label>';
     echo '<input type="radio" id="dostawa" name="dostawa" value="restauracja">';
     echo '<br>';
-    echo '<input type="submit" value="Przejdź do płatności">';
+    echo '<input type="submit" value="Przejdź do dostawy">';
     echo '</form>';
 } else {
     echo "<p>Koszyk jest pusty.</p>";

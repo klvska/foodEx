@@ -196,7 +196,7 @@ input{
 
 <body>
     <?php
-    require '../nav.php';
+    require 'nav.php';
     ?>
 <div id="modal">
     <div id="modal-content">

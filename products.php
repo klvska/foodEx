@@ -1,7 +1,7 @@
 <?php
-require_once "connection.php";
-
 session_start();
+require "./connection.php";
+require_once "./nav.php";
 
 
 function dodajDoKoszyka($produktId)

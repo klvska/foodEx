@@ -1,6 +1,7 @@
 <?php
-require_once "../connection.php";
 session_start();
+require_once "../connection.php";
+require_once "nav.php";
 $uzytkownik_id = $_SESSION['id'];
 $sql = "SELECT nazwa, cena, SUM(ilosc) as suma_ilosci FROM koszyk WHERE uzytkownik_id = $uzytkownik_id GROUP BY nazwa, cena";
 $result = $connection->query($sql);
