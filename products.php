@@ -5,7 +5,7 @@ session_start();
 
 
 function dodajDoKoszyka($produktId) {
-    
+
 global $connection;
 $sql = "SELECT * FROM `dania` WHERE `id` = $produktId";
 $result = $connection->query($sql);
@@ -28,7 +28,7 @@ if ($result === false) {
 die("Błąd podczas dodawania produktu do koszyka: " . $connection->error);
 }
 
-echo "Produkt \"$produktNazwa\" został dodany do koszyka.";
+echo "<script> alert('Produkt $produktNazwa został dodany do koszyka.')</script>";
 }
 
 

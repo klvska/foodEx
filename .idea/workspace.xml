@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Created koszyk.php, but zamowienie.php requires further debugging">
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Create index.php. Change location nav.php.">
+      <change afterPath="$PROJECT_DIR$/koszyk/dodaj.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/koszyk/usun.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koszyk/dodaj.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koszyk/koszyk.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/koszyk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686491526611</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Create index.php. Change location nav.php.">
+      <created>1686500325249</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686500325249</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +246,7 @@
     <MESSAGE value="Update table zamowienie." />
     <MESSAGE value="Update structure sql. Add table koszyk." />
     <MESSAGE value="Created koszyk.php, but zamowienie.php requires further debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created koszyk.php, but zamowienie.php requires further debugging" />
+    <MESSAGE value="Create index.php. Change location nav.php." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create index.php. Change location nav.php." />
   </component>
 </project>
