@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart.">
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Update security (register.php).">
+      <change afterPath="$PROJECT_DIR$/koszyk/nav.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logowanie/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodex.sql" beforeDir="false" afterPath="$PROJECT_DIR$/foodex.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koszyk/dodaj.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/dodaj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koszyk/koszyk.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/koszyk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koszyk/usun.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/usun.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zamowienie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +109,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tomasz Glogowski\PhpstormProjects\untitled\foodEx" />
+      <recent name="C:\Users\Tomasz Glogowski\PhpstormProjects\untitled\foodEx\logowanie" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -229,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686502816400</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update security (register.php).">
+      <created>1686503049015</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686503049015</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +267,7 @@
     <MESSAGE value="Created koszyk.php, but zamowienie.php requires further debugging" />
     <MESSAGE value="Create index.php. Change location nav.php." />
     <MESSAGE value="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart." />
+    <MESSAGE value="Update security (register.php)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update security (register.php)." />
   </component>
 </project>

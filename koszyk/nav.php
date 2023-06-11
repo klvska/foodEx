@@ -210,14 +210,14 @@
 
     <div class="flex-nav-center">
         <div class="flex-nav-icon"><a href="#">Home</a></div>
-        <div class="flex-nav-icon"><a href="products.php">Menu</a></div>
-        <div class="flex-nav-icon"><a href="map.php">Map</a></div>
+        <div class="flex-nav-icon"><a href="../products.php">Menu</a></div>
+        <div class="flex-nav-icon"><a href="../map.php">Map</a></div>
         <div class="flex-nav-icon"><a href="contact.php">Contact</a></div>
     </div>
 
     <div class="flex-nav-right">
-        <div class="flex-nav-icon flex-nav-user-icon"><a href="dashboard.php"><i class="fas fa-user fa-lg"></i></a></div>
-        <div class="flex-nav-icon flex-nav-cart-icon"><a href="koszyk/koszyk.php"><i class="fas fa-shopping-cart fa-lg"></i></a></div>
+        <div class="flex-nav-icon flex-nav-user-icon"><a href="../dashboard.php"><i class="fas fa-user fa-lg"></i></a></div>
+        <div class="flex-nav-icon flex-nav-cart-icon"><a href="../koszyk/koszyk.php"><i class="fas fa-shopping-cart fa-lg"></i></a></div>
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
@@ -226,8 +226,8 @@
 
             <ul class="menu__box" id="flex-nav-menu">
                 <li><a class="menu__item" href="#">Home</a></li>
-                <li><a class="menu__item" href="products.php">Menu</a></li>
-                <li><a class="menu__item" href="map.php">Map</a></li>
+                <li><a class="menu__item" href="../products.php">Menu</a></li>
+                <li><a class="menu__item" href="../map.php">Map</a></li>
                 <li><a class="menu__item" href="#">Contact</a></li>
             </ul>
         </div>

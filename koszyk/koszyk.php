@@ -30,7 +30,7 @@ $totalSum = 0;
 $totalQuantity = 0;
 
 if ($result->num_rows > 0) {
-    // Wyświetl produkty w koszyku
+
     while ($row = $result->fetch_assoc()) {
         echo "<p>Nazwa: " . $row['nazwa'] . "</p>";
         echo "<p>Cena: " . $row['cena'] . "</p>";
