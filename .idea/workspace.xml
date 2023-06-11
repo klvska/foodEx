@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Update structure sql. Add table koszyk.">
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Created koszyk.php, but zamowienie.php requires further debugging">
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koszyk/koszyk.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/koszyk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zamowienie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koszyk/dodaj.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686490663924</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Created koszyk.php, but zamowienie.php requires further debugging">
+      <created>1686491526611</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686491526611</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +236,7 @@
     <MESSAGE value="Add list of products (products.php). product.php show data of product from table 'dania'. Update sql. Update structure table 'dania' and add records." />
     <MESSAGE value="Update table zamowienie." />
     <MESSAGE value="Update structure sql. Add table koszyk." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update structure sql. Add table koszyk." />
+    <MESSAGE value="Created koszyk.php, but zamowienie.php requires further debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created koszyk.php, but zamowienie.php requires further debugging" />
   </component>
 </project>
