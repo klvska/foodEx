@@ -15,7 +15,7 @@
     ?>
 <form class="wyszukaj" action="products.php.php" method="post">
 <input class="wyszukaj1" name="wyszukiwarka" type="text" placeholder="Wpisz aby wyszukać...">
-<input type="image" src="img/lupa.jpg" alt="Wyszukaj" name="submit">
+<input type="image" src="./img/Lupa.JPG" alt="Wyszukaj" name="submit">
 </form>
 <p class="noco">Co dzisiaj zjesz?</p>
 <div class="prop1">
