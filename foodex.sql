@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 11:29 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Czas generowania: 12 Cze 2023, 15:29
+-- Wersja serwera: 10.4.20-MariaDB
+-- Wersja PHP: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foodex`
+-- Baza danych: `foodex`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adresy`
+-- Struktura tabeli dla tabeli `adresy`
 --
 
 CREATE TABLE `adresy` (
@@ -34,44 +34,46 @@ CREATE TABLE `adresy` (
   `Nr_Domu_Mieszkania` int(11) DEFAULT NULL,
   `Kod_Pocztowy` int(11) DEFAULT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `adresy`
+-- Zrzut danych tabeli `adresy`
 --
 
 INSERT INTO `adresy` (`id`, `Miasto`, `Ulica`, `Nr_Domu_Mieszkania`, `Kod_Pocztowy`, `id_user`) VALUES
 (46, 'tak', 'tak', 42, 44, 14),
 (47, 'Gliwce-', 'tomasz', 3, 44, 14),
 (48, 'Gliwice', 'Tak', 42, 44, 14),
-(49, 'tak', 'tak', 42, 42, 14);
+(49, 'tak', 'tak', 42, 42, 14),
+(50, 'jas', 'jasiowa', 1, 0, 16);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adresy_uzytkownicy`
+-- Struktura tabeli dla tabeli `adresy_uzytkownicy`
 --
 
 CREATE TABLE `adresy_uzytkownicy` (
   `id` int(11) NOT NULL,
   `id_adresu` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `adresy_uzytkownicy`
+-- Zrzut danych tabeli `adresy_uzytkownicy`
 --
 
 INSERT INTO `adresy_uzytkownicy` (`id`, `id_adresu`, `id_user`) VALUES
 (1, 46, 14),
 (2, 47, 14),
 (3, 48, 14),
-(4, 49, 14);
+(4, 49, 14),
+(5, 50, 16);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dania`
+-- Struktura tabeli dla tabeli `dania`
 --
 
 CREATE TABLE `dania` (
@@ -79,46 +81,47 @@ CREATE TABLE `dania` (
   `Nazwa` text DEFAULT NULL,
   `Cena` float DEFAULT NULL,
   `w_kaloryczna` int(11) NOT NULL,
-  `alergeny` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `alergeny` varchar(255) NOT NULL,
+  `src` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `dania`
+-- Zrzut danych tabeli `dania`
 --
 
-INSERT INTO `dania` (`id`, `Nazwa`, `Cena`, `w_kaloryczna`, `alergeny`) VALUES
-(1, 'Spaghetti Bolognese', 12.99, 800, 'Gluten, Jaja'),
-(2, 'Grilled Salmon', 15.5, 600, 'Ryby'),
-(3, 'Chicken Tikka Masala', 10.99, 700, 'Mleko'),
-(4, 'Margherita Pizza', 9.75, 550, 'Gluten, Laktoza'),
-(5, 'Caesar Salad', 8.99, 400, 'Jaja, Laktoza'),
-(6, 'Beef Stir-Fry', 13.25, 750, 'Soja'),
-(7, 'Mushroom Risotto', 11.5, 600, 'Gluten'),
-(8, 'Lemon Herb Roast Chicken', 14.99, 850, 'Brak'),
-(9, 'Vegan Buddha Bowl', 12.5, 500, 'Orzechy'),
-(10, 'Shrimp Pad Thai', 13.99, 650, 'Orzechy, Kraby'),
-(11, 'Spinach and Feta Stuffed Chicken Breast', 11.75, 600, 'Mleko'),
-(12, 'Vegetable Curry', 9.5, 550, 'Brak'),
-(13, 'BBQ Ribs', 16.99, 900, 'Soja'),
-(14, 'Eggplant Parmesan', 10.5, 500, 'Gluten, Jaja'),
-(15, 'Tiramisu', 7.99, 450, 'Jaja, Kawa');
+INSERT INTO `dania` (`id`, `Nazwa`, `Cena`, `w_kaloryczna`, `alergeny`, `src`) VALUES
+(1, 'Spaghetti Bolognese', 12.99, 800, 'Gluten, Jaja', './img/pasta.jpg'),
+(2, 'Grilled Salmon', 15.5, 600, 'Ryby', './img/salamon.jpg'),
+(3, 'Chicken Tikka Masala', 10.99, 700, 'Mleko', './img/chicken.jpg'),
+(4, 'Margherita Pizza', 9.75, 550, 'Gluten, Laktoza', './img/pizzaser.jpg'),
+(5, 'Caesar Salad', 8.99, 400, 'Jaja, Laktoza', './img/cezar.jpg'),
+(6, 'Beef Stir-Fry', 13.25, 750, 'Soja', './img/beef.jpg'),
+(7, 'Mushroom Risotto', 11.5, 600, 'Gluten', './img/ryz.jpg'),
+(8, 'Lemon Herb Roast Chicken', 14.99, 850, 'Brak', './img/kurczak.jpg'),
+(9, 'Vegan Buddha Bowl', 12.5, 500, 'Orzechy', './img/salatka.jpg'),
+(10, 'Shrimp Pad Thai', 13.99, 650, 'Orzechy, Kraby', './img/padthai.jpg'),
+(11, 'Spinach and Chicken Breast', 11.75, 600, 'Mleko', './img/szpinak.jpg'),
+(12, 'Vegetable Curry', 9.5, 550, 'Brak', './img/curry.jpg'),
+(13, 'BBQ Ribs', 16.99, 900, 'Soja', './img/bbq.jpg'),
+(14, 'Eggplant Parmesan', 10.5, 500, 'Gluten, Jaja', './img/eggplant.jpg'),
+(15, 'Tiramisu', 7.99, 450, 'Jaja, Kawa', './img/tiramisu.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dania_w_restauracji_xd`
+-- Struktura tabeli dla tabeli `dania_w_restauracji_xd`
 --
 
 CREATE TABLE `dania_w_restauracji_xd` (
   `id_dwr` int(11) NOT NULL,
   `id_res` int(11) DEFAULT NULL,
   `id_Dania` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `formy_platnosci`
+-- Struktura tabeli dla tabeli `formy_platnosci`
 --
 
 CREATE TABLE `formy_platnosci` (
@@ -126,12 +129,12 @@ CREATE TABLE `formy_platnosci` (
   `Karta` int(11) DEFAULT NULL,
   `Paypal` int(11) DEFAULT NULL,
   `W_Naturze` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `koszyk`
+-- Struktura tabeli dla tabeli `koszyk`
 --
 
 CREATE TABLE `koszyk` (
@@ -142,12 +145,12 @@ CREATE TABLE `koszyk` (
   `cena` decimal(10,2) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL,
   `data_dodania` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `restauracje`
+-- Struktura tabeli dla tabeli `restauracje`
 --
 
 CREATE TABLE `restauracje` (
@@ -156,10 +159,10 @@ CREATE TABLE `restauracje` (
   `Miasto` text DEFAULT NULL,
   `lat` float NOT NULL,
   `lng` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `restauracje`
+-- Zrzut danych tabeli `restauracje`
 --
 
 INSERT INTO `restauracje` (`id`, `nazwa_restauracji`, `Miasto`, `lat`, `lng`) VALUES
@@ -177,7 +180,7 @@ INSERT INTO `restauracje` (`id`, `nazwa_restauracji`, `Miasto`, `lat`, `lng`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uzytkownicy`
+-- Struktura tabeli dla tabeli `uzytkownicy`
 --
 
 CREATE TABLE `uzytkownicy` (
@@ -191,10 +194,10 @@ CREATE TABLE `uzytkownicy` (
   `Adres` int(11) DEFAULT NULL,
   `Formy_Platnosci` int(11) DEFAULT NULL,
   `Administrator` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `uzytkownicy`
+-- Zrzut danych tabeli `uzytkownicy`
 --
 
 INSERT INTO `uzytkownicy` (`id`, `Imie`, `Nazwisko`, `Nazwa_Uzytkownika`, `email`, `Haslo`, `Id_Zamowienia`, `Adres`, `Formy_Platnosci`, `Administrator`) VALUES
@@ -202,12 +205,13 @@ INSERT INTO `uzytkownicy` (`id`, `Imie`, `Nazwisko`, `Nazwa_Uzytkownika`, `email
 (12, '', '', 'tomasz2', '', '$2y$10$f4rJmEHdVI5.bNiGb0CP2e/j80AdDr7XVapv3dRfyNQbQ./M9/wzm', NULL, NULL, NULL, 0),
 (13, '', '', 'jasiu', 'tomaszglogowski@gmail.com', '$2y$10$qYQut/ZYLFiSrGRFVwM7bet5I3Jd5tKQDyL4WVCh.9Ma2qu5TFuK2', NULL, NULL, NULL, 0),
 (14, 'Tomasza', 'test', 'jasiu007', 'tomaszglo@gmail.com', '$2y$10$mJhDDLo7Ku3yAEvw3jAkQOeC.zzLS/3RH0Sfm7sbkwz.WMmBou0Y2', NULL, NULL, NULL, 0),
-(15, '', '', 'ToZiomek', 'tomaszglock@gmail.com', '$2y$10$dxoOhCkHppSQSSipXn0yhOs8Ejk30Ziup.eKsvRoa7prrbIjT2lhK', NULL, NULL, NULL, 0);
+(15, '', '', 'ToZiomek', 'tomaszglock@gmail.com', '$2y$10$dxoOhCkHppSQSSipXn0yhOs8Ejk30Ziup.eKsvRoa7prrbIjT2lhK', NULL, NULL, NULL, 0),
+(16, '', '', 'kubus', 'kuba@k.pl', '$2y$10$qh0B1n5AktQOKG9NdkGxBO0YPJLKghxkha.9JpQo0w2vHk8BTk.pm', NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `zamowienia`
+-- Struktura tabeli dla tabeli `zamowienia`
 --
 
 CREATE TABLE `zamowienia` (
@@ -220,28 +224,29 @@ CREATE TABLE `zamowienia` (
   `id_restauracji` int(11) DEFAULT NULL,
   `id_user` int(11) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `zamowienia`
+-- Zrzut danych tabeli `zamowienia`
 --
 
 INSERT INTO `zamowienia` (`id`, `id_dan`, `Cena`, `Adres`, `id_adresu`, `ilosc_dan`, `id_restauracji`, `id_user`, `status`) VALUES
 (18, NULL, 12.99, NULL, 3, 1, 0, 14, 'nowe'),
-(19, NULL, 15.5, NULL, 0, 1, 0, 14, 'nowe');
+(19, NULL, 15.5, NULL, 0, 1, 0, 14, 'nowe'),
+(20, NULL, 15.5, NULL, 5, 1, 0, 16, 'nowe');
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `adresy`
+-- Indeksy dla tabeli `adresy`
 --
 ALTER TABLE `adresy`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `adresy_uzytkownicy`
+-- Indeksy dla tabeli `adresy_uzytkownicy`
 --
 ALTER TABLE `adresy_uzytkownicy`
   ADD PRIMARY KEY (`id`),
@@ -250,13 +255,13 @@ ALTER TABLE `adresy_uzytkownicy`
   ADD KEY `fk_adresy_uzytkownicy_uzytkownicy` (`id_user`);
 
 --
--- Indexes for table `dania`
+-- Indeksy dla tabeli `dania`
 --
 ALTER TABLE `dania`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `dania_w_restauracji_xd`
+-- Indeksy dla tabeli `dania_w_restauracji_xd`
 --
 ALTER TABLE `dania_w_restauracji_xd`
   ADD PRIMARY KEY (`id_dwr`),
@@ -264,13 +269,13 @@ ALTER TABLE `dania_w_restauracji_xd`
   ADD KEY `id_Dania` (`id_Dania`);
 
 --
--- Indexes for table `formy_platnosci`
+-- Indeksy dla tabeli `formy_platnosci`
 --
 ALTER TABLE `formy_platnosci`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `koszyk`
+-- Indeksy dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
   ADD PRIMARY KEY (`id`),
@@ -278,13 +283,13 @@ ALTER TABLE `koszyk`
   ADD KEY `produkt_id` (`produkt_id`);
 
 --
--- Indexes for table `restauracje`
+-- Indeksy dla tabeli `restauracje`
 --
 ALTER TABLE `restauracje`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `uzytkownicy`
+-- Indeksy dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
   ADD PRIMARY KEY (`id`),
@@ -293,96 +298,96 @@ ALTER TABLE `uzytkownicy`
   ADD KEY `uzytkownicy_ibfk_2` (`Adres`);
 
 --
--- Indexes for table `zamowienia`
+-- Indeksy dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT for table `adresy`
+-- AUTO_INCREMENT dla tabeli `adresy`
 --
 ALTER TABLE `adresy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT for table `adresy_uzytkownicy`
+-- AUTO_INCREMENT dla tabeli `adresy_uzytkownicy`
 --
 ALTER TABLE `adresy_uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `dania`
+-- AUTO_INCREMENT dla tabeli `dania`
 --
 ALTER TABLE `dania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `dania_w_restauracji_xd`
+-- AUTO_INCREMENT dla tabeli `dania_w_restauracji_xd`
 --
 ALTER TABLE `dania_w_restauracji_xd`
   MODIFY `id_dwr` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `formy_platnosci`
+-- AUTO_INCREMENT dla tabeli `formy_platnosci`
 --
 ALTER TABLE `formy_platnosci`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `koszyk`
+-- AUTO_INCREMENT dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `restauracje`
+-- AUTO_INCREMENT dla tabeli `restauracje`
 --
 ALTER TABLE `restauracje`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `uzytkownicy`
+-- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `zamowienia`
+-- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- Constraints for dumped tables
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `adresy_uzytkownicy`
+-- Ograniczenia dla tabeli `adresy_uzytkownicy`
 --
 ALTER TABLE `adresy_uzytkownicy`
   ADD CONSTRAINT `fk_adresy_uzytkownicy_adresy` FOREIGN KEY (`id_adresu`) REFERENCES `adresy` (`id`),
   ADD CONSTRAINT `fk_adresy_uzytkownicy_uzytkownicy` FOREIGN KEY (`id_user`) REFERENCES `uzytkownicy` (`id`);
 
 --
--- Constraints for table `dania_w_restauracji_xd`
+-- Ograniczenia dla tabeli `dania_w_restauracji_xd`
 --
 ALTER TABLE `dania_w_restauracji_xd`
   ADD CONSTRAINT `dania_w_restauracji_xd_ibfk_1` FOREIGN KEY (`id_res`) REFERENCES `restauracje` (`id`),
   ADD CONSTRAINT `dania_w_restauracji_xd_ibfk_2` FOREIGN KEY (`id_Dania`) REFERENCES `dania` (`id`);
 
 --
--- Constraints for table `koszyk`
+-- Ograniczenia dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
   ADD CONSTRAINT `koszyk_ibfk_1` FOREIGN KEY (`uzytkownik_id`) REFERENCES `uzytkownicy` (`id`),
   ADD CONSTRAINT `koszyk_ibfk_2` FOREIGN KEY (`produkt_id`) REFERENCES `dania` (`id`);
 
 --
--- Constraints for table `uzytkownicy`
+-- Ograniczenia dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
   ADD CONSTRAINT `uzytkownicy_ibfk_1` FOREIGN KEY (`Id_Zamowienia`) REFERENCES `zamowienia` (`id`),

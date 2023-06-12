@@ -83,7 +83,7 @@ while ($row = $result->fetch_assoc()) {
 <div>
 <?php
 echo "<a class='pro' href='product.php?id=" . $row['id'] . "'>" . $row['Nazwa'] . "</a><br>";
-echo "<a class='pro' href='?id=" . $row['id'] . "'><img class='pizza' src='img/pizza.jpg' alt='pizza'></a>";
+echo '<a class="pro" href="product.php?id="' . $row['id'] . '">' . '<img class="pizza" src=" '. $row['src'] . '" ' . 'alt="pizza"></a>';
 ?>
 </div>
 <?php
