@@ -90,7 +90,7 @@
         }
 
         $uzytkownik_id = $_SESSION['id'];
-        $sql = "SELECT nazwa, cena, SUM(ilosc) as suma_ilosci FROM koszyk WHERE uzytkownik_id = $uzytkownik_id GROUP BY nazwa, cena";
+        $sql = "SELECT id,nazwa, cena, SUM(ilosc) as suma_ilosci FROM koszyk WHERE uzytkownik_id = $uzytkownik_id GROUP BY nazwa, cena";
         $result = $connection->query($sql);
 
         if ($result === false) {
@@ -119,6 +119,8 @@
 
             echo "<h2>Wybierz formę dostawy:</h2>";
             echo '<form action="zamowienie_action.php" method="POST">';
+            echo '<input type="hidden" name="totalSum" value="' . $totalSum . '">';
+            echo '<input type="hidden" name="totalQuantity" value="' . $totalQuantity . '">';
             echo '<label for="dostawa">Dostawa do domu:</label>';
             echo '<input type="radio" id="dostawa" name="dostawa" value="dom">';
             echo '<br>';

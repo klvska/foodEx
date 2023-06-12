@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Added order summary and delivery option selection in zamowienie.php file. Updated the database schema to include the necessary tables for storing delivery addresses and payment methods. Implemented the functionality to display the order summary, calculate the total sum and quantity, and provide the option to choose between home delivery and on-site pickup">
-      <change afterPath="$PROJECT_DIR$/zamowienie_action.php" afterDir="false" />
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Testing version zamowienie">
+      <change afterPath="$PROJECT_DIR$/sukces.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koszyk/koszyk.php" beforeDir="false" afterPath="$PROJECT_DIR$/koszyk/koszyk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zamowienie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodex.sql" beforeDir="false" afterPath="$PROJECT_DIR$/foodex.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zamowienie_payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie_payment.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +46,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="zamowienie" />
-                    <option name="lastUsedInstant" value="1686481463" />
+                    <option name="lastUsedInstant" value="1686549190" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1686480613" />
+                    <option name="lastUsedInstant" value="1686547111" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="product" />
@@ -86,22 +82,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomasz Glogowski/PhpstormProjects/untitled/foodEx&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tomasz Glogowski\PhpstormProjects\untitled\foodEx" />
@@ -131,6 +127,8 @@
       <workItem from="1686160058631" duration="1404000" />
       <workItem from="1686334170531" duration="333000" />
       <workItem from="1686464799887" duration="4716000" />
+      <workItem from="1686546880010" duration="1349000" />
+      <workItem from="1686548907287" duration="6449000" />
     </task>
     <task id="LOCAL-00001" summary="Create connection.php">
       <created>1684827546673</created>
@@ -251,7 +249,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686504292255</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="System zamówień.">
+      <created>1686514735051</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686514735051</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Bug fix. The user cannot select several addresses.">
+      <created>1686549349184</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686549349184</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Testing version zamowienie">
+      <created>1686552250908</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686552250908</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +294,9 @@
     <MESSAGE value="Implement security measures and SQL instructions in the 'dodaj.php' file to add a product to the shopping cart." />
     <MESSAGE value="Update security (register.php)." />
     <MESSAGE value="Added order summary and delivery option selection in zamowienie.php file. Updated the database schema to include the necessary tables for storing delivery addresses and payment methods. Implemented the functionality to display the order summary, calculate the total sum and quantity, and provide the option to choose between home delivery and on-site pickup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added order summary and delivery option selection in zamowienie.php file. Updated the database schema to include the necessary tables for storing delivery addresses and payment methods. Implemented the functionality to display the order summary, calculate the total sum and quantity, and provide the option to choose between home delivery and on-site pickup" />
+    <MESSAGE value="System zamówień." />
+    <MESSAGE value="Bug fix. The user cannot select several addresses." />
+    <MESSAGE value="Testing version zamowienie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing version zamowienie" />
   </component>
 </project>
