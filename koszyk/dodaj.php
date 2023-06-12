@@ -1,3 +1,38 @@
+<head>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+        body {
+            background-color: #F7F7F7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 54px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #F07F00;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #F07F00;
+        }
+    </style>
+</head>
 <?php
 session_start();
 require_once "../connection.php";
@@ -33,7 +68,8 @@ if (isset($_POST['id'])) {
         $insertResult = $connection->query($insertSql);
 
         if ($insertResult) {
-            echo "Produkt został dodany do koszyka.";
+            echo '<h1>Produkt został dodany do koszyka.</h1>';
+            echo '<a href="koszyk.php">Zobacz koszyk!</a>';
         } else {
             echo "Błąd podczas dodawania produktu do koszyka.";
         }
