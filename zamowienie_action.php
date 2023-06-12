@@ -100,9 +100,9 @@
                         echo "<p>Nr domu/mieszkania: " . $row['Nr_Domu_Mieszkania'] . "</p>";
                         echo "<p>Miasto: " . $row['Miasto'] . "</p>";
                         echo "<p>Kod pocztowy: " . $row['Kod_pocztowy'] . "</p>";
-                        echo "<input type='submit' name='submit' value='Przejdź do płatności'>";
-                        echo "</form>";
                     }
+                    echo "<input type='submit' name='submit' value='Przejdź do płatności'>";
+                    echo "</form>";
                 } else {
                     echo "<p class='empty-address'>Brak adresów.</p>";
                     echo "<p class='empty-address'><a href='dashboard.php'>Chcesz dodać adres? Kliknij tutaj</a></p>";
@@ -115,9 +115,9 @@
                     echo "<input type='radio' id='restaurant' name='selected_address' value='restauracja'>";
                     echo "<p>Miasto: " . $row['Miasto'] . "</p>";
                     echo "<p>Nazwa restauracji: " . $row['nazwa_restauracji'] . "</p>";
-                    echo "<input type='submit' name='submit' value='Przejdź do płatności'>";
-                    echo "</form>";
                 }
+                echo "<input type='submit' name='submit' value='Przejdź do płatności'>";
+                echo "</form>";
             }
 
         } else {
