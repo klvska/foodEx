@@ -68,8 +68,12 @@ require_once "nav.php";
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
 
-            $sql = "SELECT * FROM `dania` WHERE `id` = $id";
+            $sql = "SELECT * FROM dania WHERE id = $id;";
             $result = $connection->query($sql);
+            if(!$result) { 
+              echo $connection->error;
+              echo "id". $id;
+            }
 
             if ($row = $result->fetch_assoc()) {
                 echo "<h1>Nazwa: " . $row['Nazwa'] . "</h1>";
