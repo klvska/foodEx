@@ -40,6 +40,20 @@
             cursor: pointer;
             border-radius: 41px;
         }
+        .dodaj{
+          width: 150px;
+          height: 30px;
+        }
+        .xd {
+            color: #F07F00;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .xd:hover {
+            color: #F07F00;
+        }
     </style>
 </head>
 <body>
@@ -76,8 +90,9 @@ require_once "nav.php";
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<input type="hidden" name="nazwa" value="' . $row['Nazwa'] . '">';
                 echo '<input type="hidden" name="cena" value="' . $row['Cena'] . '">';
-                echo '<input type="submit" value="Dodaj do koszyka">';
-                echo '</form>';
+                echo '<input class="dodaj" type="submit" value="Dodaj do koszyka">';
+                echo '</form><br>';
+                echo '<a class="xd" href="products.php">Przeglądaj dalej!</a>';
             } else {
                 echo "Produkt o podanym ID nie został znaleziony.";
             }
