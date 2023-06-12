@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="System zamówień.">
+    <list default="true" id="406adb55-6626-4b7e-8720-6faa4bd8774a" name="Changes" comment="Bug fix. The user cannot select several addresses.">
+      <change afterPath="$PROJECT_DIR$/zamowienie_payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zamowienie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zamowienie_action.php" beforeDir="false" afterPath="$PROJECT_DIR$/zamowienie_action.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +127,7 @@
       <workItem from="1686334170531" duration="333000" />
       <workItem from="1686464799887" duration="4716000" />
       <workItem from="1686546880010" duration="1349000" />
-      <workItem from="1686548907287" duration="376000" />
+      <workItem from="1686548907287" duration="3317000" />
     </task>
     <task id="LOCAL-00001" summary="Create connection.php">
       <created>1684827546673</created>
@@ -253,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686514735051</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Bug fix. The user cannot select several addresses.">
+      <created>1686549349184</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686549349184</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +287,7 @@
     <MESSAGE value="Update security (register.php)." />
     <MESSAGE value="Added order summary and delivery option selection in zamowienie.php file. Updated the database schema to include the necessary tables for storing delivery addresses and payment methods. Implemented the functionality to display the order summary, calculate the total sum and quantity, and provide the option to choose between home delivery and on-site pickup" />
     <MESSAGE value="System zamówień." />
-    <option name="LAST_COMMIT_MESSAGE" value="System zamówień." />
+    <MESSAGE value="Bug fix. The user cannot select several addresses." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix. The user cannot select several addresses." />
   </component>
 </project>

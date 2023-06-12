@@ -84,18 +84,22 @@
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dostawa = $_POST['dostawa'];
-
+            $totalsum = $_POST['totalSum'];
+            $totalQuantity = $_POST['totalQuantity'];
             if ($dostawa == 'dom') {
-                $query = "SELECT a.Ulica, a.Nr_Domu_Mieszkania, a.Miasto, a.Kod_pocztowy
+                $query = "SELECT a.Ulica, a.Nr_Domu_Mieszkania, a.Miasto, a.Kod_pocztowy, au.id
                   FROM `adresy` a
                   INNER JOIN `adresy_uzytkownicy` au ON a.id = au.id_adresu
                   WHERE au.id_user = '$id_user'";
                 $result = mysqli_query($connection, $query);
                 if (mysqli_num_rows($result) > 0) {
                     echo "<h1>Wybierz adres dostawy:</h1>";
-                    while($row = mysqli_fetch_assoc($result)){
+                    while($row = mysqli_fetch_assoc($result)) {
                         echo "<form action='zamowienie_payment.php' method='post' class='address-container'>";
-                        echo "<input type='radio' id='home' name='selected_address' value='" . $row['Ulica'] . "|" . $row['Nr_Domu_Mieszkania'] . "|" . $row['Miasto'] . "|" . $row['Kod_pocztowy'] . "'>";
+                        echo "<input type='radio' id='home' name='selected_address' value='" . $row['id']. "'>";
+                        echo '<input type="hidden" name="totalSum" value="' . $totalsum . '">';
+                        echo '<input type="hidden" name="totalQuantity" value="' . $totalQuantity . '">';
+                        echo "<input type='hidden' name='dostawa' value='dom'>";
                         echo "<p>Ulica: " . $row['Ulica'] . "</p>";
                         echo "<p>Nr domu/mieszkania: " . $row['Nr_Domu_Mieszkania'] . "</p>";
                         echo "<p>Miasto: " . $row['Miasto'] . "</p>";
@@ -108,14 +112,18 @@
                     echo "<p class='empty-address'><a href='dashboard.php'>Chcesz dodać adres? Kliknij tutaj</a></p>";
                 }
             } else if ($dostawa == 'restauracja') {
-                $sql = "SELECT `Miasto`, `nazwa_restauracji`, `lat`, `lng` FROM `restauracje`";
+                $sql = "SELECT id ,`Miasto`, `nazwa_restauracji`, `lat`, `lng` FROM `restauracje`";
                 $result = $connection->query($sql);
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<form action='zamowienie_payment.php' method='post' class='address-container'>";
-                    echo "<input type='radio' id='restaurant' name='selected_address' value='restauracja'>";
+                    echo "<input type='radio' id='restaurant' name='selected_address' value='". $row['id'] . "' >";
+                    echo '<input type="hidden" name="totalSum" value="' . $totalsum . '">';
+                    echo '<input type="hidden" name="totalQuantity" value="' . $totalQuantity . '">';
+                    echo "<input type='hidden' name='dostawa' value='restauracja'>";
                     echo "<p>Miasto: " . $row['Miasto'] . "</p>";
                     echo "<p>Nazwa restauracji: " . $row['nazwa_restauracji'] . "</p>";
                 }
+
                 echo "<input type='submit' name='submit' value='Przejdź do płatności'>";
                 echo "</form>";
             }
