@@ -147,6 +147,45 @@
         } else {
             echo "<p>Brak adresów.</p>";
         }
+
+        // Wyświetlanie zamówień
+
+  $sql = "SELECT Cena, id_adresu, ilosc_dan, status, nazwa_restauracji, restauracje.id AS id_res FROM `zamowienia` INNER JOIN restauracje ON restauracje.id = zamowienia.id_restauracji WHERE zamowienia.id_user = '$id_user'";
+  $result = mysqli_query($connection, $sql);
+  $nazwa_res = 0;
+
+  // Sprawdź, czy istnieją zamówienia
+  if (mysqli_num_rows($result) > 0) {
+
+
+      echo "<table>";
+      echo "<tr>
+            <th>Cena</th>
+            <th>ID adresu</th>
+            <th>Ilość dań</th>
+            <th>Nazwa restauracji</th>
+            <th>Status</th>
+          </tr>";
+
+      while ($row = mysqli_fetch_assoc($result)) {
+          if($row['id_res'] == 0){
+              $nazwa_res = "Brak";
+          }else {
+              $nazwa_res = $row['nazwa_restauracji'];
+          }
+          echo "<tr>
+                <td>" . $row['Cena'] . "</td>
+                <td>" . $row['id_adresu'] . "</td>
+                <td>" . $row['ilosc_dan'] . "</td>
+                <td>" . $nazwa_res . "</td>
+                <td>" . $row['status'] . "</td>
+              </tr>";
+      }
+
+      echo "</table>";
+  } else {
+      echo "Brak zamówień.";
+  }
         ?>
     </div>
 </body>

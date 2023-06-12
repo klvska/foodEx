@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 07:15 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Jun 12, 2023 at 11:29 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `adresy` (
   `Nr_Domu_Mieszkania` int(11) DEFAULT NULL,
   `Kod_Pocztowy` int(11) DEFAULT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `adresy`
@@ -42,7 +42,9 @@ CREATE TABLE `adresy` (
 
 INSERT INTO `adresy` (`id`, `Miasto`, `Ulica`, `Nr_Domu_Mieszkania`, `Kod_Pocztowy`, `id_user`) VALUES
 (46, 'tak', 'tak', 42, 44, 14),
-(47, 'Gliwce-', 'tomasz', 3, 44, 14);
+(47, 'Gliwce-', 'tomasz', 3, 44, 14),
+(48, 'Gliwice', 'Tak', 42, 44, 14),
+(49, 'tak', 'tak', 42, 42, 14);
 
 -- --------------------------------------------------------
 
@@ -54,7 +56,7 @@ CREATE TABLE `adresy_uzytkownicy` (
   `id` int(11) NOT NULL,
   `id_adresu` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `adresy_uzytkownicy`
@@ -62,7 +64,9 @@ CREATE TABLE `adresy_uzytkownicy` (
 
 INSERT INTO `adresy_uzytkownicy` (`id`, `id_adresu`, `id_user`) VALUES
 (1, 46, 14),
-(2, 47, 14);
+(2, 47, 14),
+(3, 48, 14),
+(4, 49, 14);
 
 -- --------------------------------------------------------
 
@@ -76,7 +80,7 @@ CREATE TABLE `dania` (
   `Cena` float DEFAULT NULL,
   `w_kaloryczna` int(11) NOT NULL,
   `alergeny` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `dania`
@@ -109,7 +113,7 @@ CREATE TABLE `dania_w_restauracji_xd` (
   `id_dwr` int(11) NOT NULL,
   `id_res` int(11) DEFAULT NULL,
   `id_Dania` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -122,7 +126,7 @@ CREATE TABLE `formy_platnosci` (
   `Karta` int(11) DEFAULT NULL,
   `Paypal` int(11) DEFAULT NULL,
   `W_Naturze` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -138,19 +142,7 @@ CREATE TABLE `koszyk` (
   `cena` decimal(10,2) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL,
   `data_dodania` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `koszyk`
---
-
-INSERT INTO `koszyk` (`id`, `uzytkownik_id`, `produkt_id`, `nazwa`, `cena`, `ilosc`, `data_dodania`) VALUES
-(6, 14, 2, 'Grilled Salmon', '15.50', 1, '2023-06-11 16:28:25'),
-(9, 14, 1, 'Spaghetti Bolognese', '12.99', 1, '2023-06-11 16:48:23'),
-(10, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:49:13'),
-(11, 14, 8, 'Lemon Herb Roast Chicken', '14.99', 1, '2023-06-11 16:49:23'),
-(12, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:49:31'),
-(13, 14, 3, 'Chicken Tikka Masala', '10.99', 1, '2023-06-11 16:57:12');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -164,7 +156,7 @@ CREATE TABLE `restauracje` (
   `Miasto` text DEFAULT NULL,
   `lat` float NOT NULL,
   `lng` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `restauracje`
@@ -199,7 +191,7 @@ CREATE TABLE `uzytkownicy` (
   `Adres` int(11) DEFAULT NULL,
   `Formy_Platnosci` int(11) DEFAULT NULL,
   `Administrator` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `uzytkownicy`
@@ -223,9 +215,20 @@ CREATE TABLE `zamowienia` (
   `id_dan` int(11) DEFAULT NULL,
   `Cena` float DEFAULT NULL,
   `Adres` int(11) DEFAULT NULL,
-  `id_adresu` int(11) NOT NULL,
-  `ilosc_dan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_adresu` int(11) DEFAULT NULL,
+  `ilosc_dan` int(11) NOT NULL,
+  `id_restauracji` int(11) DEFAULT NULL,
+  `id_user` int(11) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zamowienia`
+--
+
+INSERT INTO `zamowienia` (`id`, `id_dan`, `Cena`, `Adres`, `id_adresu`, `ilosc_dan`, `id_restauracji`, `id_user`, `status`) VALUES
+(18, NULL, 12.99, NULL, 3, 1, 0, 14, 'nowe'),
+(19, NULL, 15.5, NULL, 0, 1, 0, 14, 'nowe');
 
 --
 -- Indexes for dumped tables
@@ -293,10 +296,7 @@ ALTER TABLE `uzytkownicy`
 -- Indexes for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_adresu` (`id_adresu`),
-  ADD KEY `id_dan` (`id_dan`),
-  ADD KEY `zamowienia_ibfk_2` (`Adres`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -306,13 +306,13 @@ ALTER TABLE `zamowienia`
 -- AUTO_INCREMENT for table `adresy`
 --
 ALTER TABLE `adresy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `adresy_uzytkownicy`
 --
 ALTER TABLE `adresy_uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `dania`
@@ -336,7 +336,7 @@ ALTER TABLE `formy_platnosci`
 -- AUTO_INCREMENT for table `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `restauracje`
@@ -354,7 +354,7 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
@@ -388,13 +388,6 @@ ALTER TABLE `uzytkownicy`
   ADD CONSTRAINT `uzytkownicy_ibfk_1` FOREIGN KEY (`Id_Zamowienia`) REFERENCES `zamowienia` (`id`),
   ADD CONSTRAINT `uzytkownicy_ibfk_2` FOREIGN KEY (`Adres`) REFERENCES `adresy` (`id`),
   ADD CONSTRAINT `uzytkownicy_ibfk_3` FOREIGN KEY (`Formy_Platnosci`) REFERENCES `formy_platnosci` (`id`);
-
---
--- Constraints for table `zamowienia`
---
-ALTER TABLE `zamowienia`
-  ADD CONSTRAINT `zamowienia_ibfk_1` FOREIGN KEY (`id_dan`) REFERENCES `dania_w_restauracji_xd` (`id_dwr`),
-  ADD CONSTRAINT `zamowienia_ibfk_2` FOREIGN KEY (`Adres`) REFERENCES `adresy_uzytkownicy` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
